@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title>Prachodayan</title>
+         <script language="javascript">
+             function f1()
+             {
+                 var gate=document.form1.gate.value;
+                 var q=document.form1.qubit.value;
+                 if(gate=="nothing")
+                 {
+                     alert("Select Gate");
+                 }
+                 else if(q=="nothing")
+                 {
+                     alert("Select Input Qubit");
+                 }
+                 else
+                 {
+                    var a,b;
+                    if(q=="0"){a=1;b=0;}
+                    else if(q=="1"){a=0;b=1;}
+                    else if(q=="+"){a=1;b=1;}
+                    else if(q=="-"){a=1;b=-1;}
+                    
+                    if(gate=="I")
+                    {
+                        document.form1.output.value="| "+q+" >";
+                    }
+                    else if(gate=="X")
+                    {
+                        if(q=="0")
+                        document.form1.output.value="| 1 >";
+                        
+                        else if(q=="1")
+                            document.form1.output.value="| 0 >";
+                        else if(q=="+")
+                            document.form1.output.value="| + >";
+                        else if(q=="-")
+                            document.form1.output.value="[ -| 0 > + | 1 > ]/\u221A2";
+                    }
+                    else if(gate=="H")
+                    {
+                        if(q=="0")
+                        document.form1.output.value="| + >";
+                        else if(q=="1")
+                            document.form1.output.value="| - >";
+                        
+                        else if(q=="+")
+                            document.form1.output.value="| 0 >";
+                        else if(q=="-")
+                            document.form1.output.value="| 1 >";
+                    }
+                    else if(gate=="Z")
+                    {
+                        if(q=="0")
+                        document.form1.output.value="| 0 >";
+                        else if(q=="1")
+                            document.form1.output.value="-| 1 >";
+                        
+                        else if(q=="+")
+                            document.form1.output.value="| - >";
+                        else if(q=="-")
+                            document.form1.output.value="| + >";
+                    }
+                    else if(gate=="Y")
+                    {
+                        if(q=="0")
+                        document.form1.output.value=" i| 0 >";
+                        else if(q=="1")
+                            document.form1.output.value=" -i | 1 > ";
+                        
+                        else if(q=="+")
+                            document.form1.output.value="[ i| 0 > - i| 1 > ]/\u221A2";
+                        else if(q=="-")
+                            document.form1.output.value="[ i| 0 > + i| 1 > ]/\u221A2";
+                    }
+                    else if(gate=="S")
+                    {
+                        if(q=="0")
+                        document.form1.output.value="| 0 >";
+                        else if(q=="1")
+                            document.form1.output.value=" i | 1 > ";
+                        
+                        else if(q=="+")
+                            document.form1.output.value="[ 1| 0 > + i| 1 > ]/\u221A2";
+                        else if(q=="-")
+                            document.form1.output.value="[ 1| 0 > - i| 1 > ]/\u221A2";
+                    }
+                    else if(gate=="pi/8")
+                    {
+                        if(q=="0")
+                        document.form1.output.value="| 0 >";
+                        else if(q=="1")
+                            document.form1.output.value=" (e ^ i\u03C0/4) | 1 > ";
+                        
+                        else if(q=="+")
+                            document.form1.output.value="[ 1| 0 > + (e ^ i\u03C0/4)| 1 > ]/\u221A2";
+                        else if(q=="-")
+                            document.form1.output.value="[ 1| 0 > - (e ^ i\u03C0/4)| 1 > ]/\u221A2";
+                    }
+                    
+                 }
+             }
+             
+                 
+             
+             function draw()
+             {
+                 var gate=document.form1.gate.value;
+             
+                 if(gate=="nothing")
+                 {
+                 var c = document.getElementById("myCanvas");
+                     c.width+=0;
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                        ctx.rect(100, 35, 150, 150);
+                     ctx.moveTo(0, 110);
+                        ctx.lineTo(100, 110);
+                        ctx.moveTo(250, 110);
+                        ctx.lineTo(350, 110);
+                     ctx.stroke();
+                 }
+                 else
+                 {
+                     if(gate=="pi/8")
+                         gate="T";
+                     var c = document.getElementById("myCanvas");
+                        c.width+=0;
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                        ctx.font = 'normal 55px sans-serif';
+                        ctx.rect(100, 35, 150, 150);
+                        ctx.moveTo(0, 110);
+                        ctx.lineTo(100, 110);
+                        ctx.moveTo(250, 110);
+                        ctx.lineTo(350, 110);
+                        ctx.fillText(gate, 155, 130, 80);
+                     ctx.stroke();
+                 }
+             }
+             </script>
+    </head>
+    <body>
+        <form name="form1">
+           <table width="95%" align="center">
+            <tr>
+                <td width="80%">
+                    <font style="font-size:55px" color="green">Prachodayan<br></font><font style="font-size:30px" color="red"><i>Enlightening Minds</i></font>
+                </td>
+                <td align="right"><a href="index.html"><img src="home.jpeg" width="40%"></a></td>
+         
+        <br>
+        <table width="100%" border="1">
+            <tr></tr>
+        </table>
+        <br><br>
+        <table width="100%" align="center" border="1" cellpadding="20" bordercolor='black'>
+           
+            <tr>  
+                <td align="center">
+                    <a href="Courses.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Courses</b></font></a>
+                </td> 
+                <td align="center">
+                    <a href="Research.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Research</b></font></a>
+                </td>  <td align="center">
+                    <a href="AboutUs.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>About Us</b></font></a>
+                </td>
+               
+            </tr>
+        </table><br><br>
+        <table width='30%' border='0'>
+            <tr><td align='center' width='20%'>
+                <a href="QC_Home.html"><font color="black" style="font-size:14px"><img src="qc.png" width="60" height="60"><br>Quantum Computing</font></a>
+                </td></tr>
+        </table>
+        <br><br>
+        <center> <select name="gate" style="font-size: 28pt;" onchange="draw()"><option value="nothing">Select Gate</option><option value="I">I (Identity)</option><option value="X">X (NOT)</option><option value="H">Hadamard</option><option value="Y">Y</option><option value="Z">Z</option><option value="S">Phase (S)</option><option value="pi/8">&Pi;/8 (T)</option></select></center>
+        <br><br><table align="center" width="70%" border="0" cellpadding="0" cellspacing="0"><tr>
+                <td align="right" width="30%"> 
+                    
+                <select name="qubit" style="font-size: 20pt;text-align:center;">
+                    <option value="nothing">
+                        Input State
+                    </option>
+                    <option value="0">
+                        | 0 >
+                    </option>
+                    <option value="1">
+                        | 1 >
+                    </option>
+                    <option value="+">
+                        | + >
+                    </option>
+                    <option value="-">
+                        | - >
+                    </option>
+                    
+                    
+                    
+                </select></td>
+                
+            
+                
+                
+                
+                <td align="center"> 
+                  <canvas id="myCanvas" width="350" height="220" style="border:0px solid #000000;">
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+                    <script>
+                        
+                        var c = document.getElementById("myCanvas");
+                     c.width+=0;
+                     var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                     ctx.rect(100, 35, 150, 150);
+                     ctx.moveTo(0, 110);
+                        ctx.lineTo(100, 110);
+                        ctx.moveTo(250, 110);
+                        ctx.lineTo(350, 110);
+                     ctx.stroke();
+                    </script>  
+                
+            </td>
+            <td align="left">
+                <input type="text" name="output" value="Output Qubit" style="font-size: 20pt;" readonly>
+                 
+            </td>
+            </tr></table>
+        <br><br>
+        <center><input type="button" value="Submit" style="width:100pt; font-size: 24pt;" onclick="f1()"></center>
+        </form></body></html>

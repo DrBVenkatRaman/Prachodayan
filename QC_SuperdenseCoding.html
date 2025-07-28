@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title>Prachodayan</title>
+         <script language="javascript">
+             function setSenderDefault()
+             {
+                        var c = document.getElementById("myCanvas1");
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();                                         
+                        ctx.font = 'normal 28px sans-serif';
+                        ctx.moveTo(0, 130);
+                        ctx.lineTo(300, 130); 
+                        
+                        ctx.stroke();
+             }
+             function setSender()
+             {
+                 
+                 var b1=document.form1.b1.value;
+                 var b2=document.form1.b2.value;
+                 document.form1.i1.value=document.form1.b1.value;
+                 document.form1.i2.value=document.form1.b2.value;
+                 if(b1=="0"&&b2=="0")
+                 {
+                        var c = document.getElementById("myCanvas1");
+                        c.width+=0;
+                        setSenderDefault();
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();                                         
+                        ctx.moveTo(0, 47);
+                        ctx.lineTo(300, 47);                       
+                        ctx.stroke();
+                 }
+                 else if(b1=="0"&&b2=="1")
+                 {
+                        var c = document.getElementById("myCanvas1");
+                        c.width+=0;
+                        setSenderDefault();
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();   
+                        ctx.font = 'normal 34px sans-serif';
+                        ctx.moveTo(0, 47);
+                        ctx.lineTo(120, 47); 
+                        ctx.rect(120, 20, 60, 60);
+                        ctx.moveTo(180, 47);
+                        ctx.lineTo(300, 47);
+                        ctx.fillText("X", 138, 60, 50)
+                        ctx.stroke();
+                 }
+                 else if(b1=="1"&&b2=="0")
+                 {
+                        var c = document.getElementById("myCanvas1");
+                        c.width+=0;
+                        setSenderDefault();
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();   
+                        ctx.font = 'normal 34px sans-serif';
+                        ctx.moveTo(0, 47);
+                        ctx.lineTo(120, 47); 
+                        ctx.rect(120, 20, 60, 60);
+                        ctx.moveTo(180, 47);
+                        ctx.lineTo(300, 47);
+                        ctx.fillText("Z", 138, 60, 50)
+                        ctx.stroke();
+                 }
+                 else if(b1=="1"&&b2=="1")
+                 {
+                        var c = document.getElementById("myCanvas1");
+                        c.width+=0;
+                        setSenderDefault();
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();   
+                        ctx.font = 'normal 34px sans-serif';
+                        ctx.moveTo(0, 47);
+                        ctx.lineTo(90, 47); 
+                        ctx.rect(90, 20, 60, 60);
+                        ctx.rect(150, 20, 60, 60);
+                        ctx.moveTo(210, 47);
+                        ctx.lineTo(300, 47);
+                        ctx.fillText("X", 110, 60, 50);
+                        ctx.fillText("Z", 170, 60, 50);
+                        ctx.stroke();
+                 }
+                 else
+                 {
+                     document.form1.i1.value="-";
+                     document.form1.i2.value="-";
+                        var c = document.getElementById("myCanvas1");
+                        c.width+=0;
+                        setSenderDefault();
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();   
+                        ctx.moveTo(0, 47);
+                        ctx.lineTo(300, 47); 
+                        ctx.stroke();
+                 }
+                 
+             }
+             
+             </script>
+             
+    </head>
+    <body>
+       
+        <form name="form1">
+           <table width="95%" align="center">
+            <tr>
+                <td width="80%">
+                    <font style="font-size:55px" color="green">Prachodayan<br></font><font style="font-size:30px" color="red"><i>Enlightening Minds</i></font>
+                </td>
+                <td align="right"><a href="index.html"><img src="home.jpeg" width="40%"></a></td>
+         
+        <br>
+        <table width="100%" border="1">
+            <tr></tr>
+        </table>
+        <br><br>
+        <table width="100%" align="center" border="1" cellpadding="20" bordercolor='black'>
+           
+            <tr>  
+                <td align="center">
+                    <a href="Courses.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Courses</b></font></a>
+                </td> 
+                <td align="center">
+                    <a href="Research.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Research</b></font></a>
+                </td>  <td align="center">
+                    <a href="AboutUs.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>About Us</b></font></a>
+                </td>
+               
+            </tr>
+        </table><br><br>
+        <table width='30%' border='0'>
+            <tr><td align='center' width='20%'>
+                <a href="QC_Home.html"><font color="black" style="font-size:14px"><img src="qc.png" width="60" height="60"><br>Quantum Computing</font></a>
+                </td></tr>
+        </table>
+        <br><br>
+      
+        
+        <center><font style="font-size:3vw">Superdense Coding</font><br><br>
+            <br><br><br>
+        
+        <table width="90%" align="center" border="0" cellpadding="0" cellspacing="0">  
+            <tr>
+                <td align="right" width="50%">
+                    
+                    <table border="0" align="right" cellpadding="0" cellspacing="0">
+                        <tr><td rowspan="2" align="right" style="vertical-align: bottom;"><br>
+                                <font style="font-size:24px;"><b><center>Bell State</center><br>(|00> + |11>) /&radic;2 </b></font><font style="font-size:100px;"><b> { </b></font><br><br></td></tr>
+                         
+                            <td>
+                                
+                        <center><font style="font-size:32px;color:green;">Sender's Side</font><br></center>
+                                <table border='0' cellpadding="0" cellspacing="0"><tr><td align="right"><br>
+                                <select name="b1" style="font-size: 20pt;text-align:center;color:blue;" onChange="setSender()">
+                    <option>
+                        Select Bit1
+                    </option>
+                    <option value="0">
+                         0 
+                    </option>
+                    <option value="1">
+                         1 
+                    </option>
+                                </select>
+                                
+                                        
+                                <select name="b2" style="font-size: 20pt;text-align:center;color:blue;" onChange="setSender()">
+                    <option>
+                        Select Bit2
+                    </option>
+                    <option value="0">
+                         0 
+                    </option>
+                    <option value="1">
+                         1 
+                    </option>
+                                </select><br><br>
+                                <canvas id="myCanvas1" width="300" height="150" style="border:2px solid #000000;">
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+                                 <script>
+                        var c = document.getElementById("myCanvas1");
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();                                         
+                        ctx.font = 'normal 28px sans-serif';
+                        ctx.moveTo(0, 130);
+                        ctx.lineTo(300, 130); 
+                        ctx.moveTo(0, 47);
+                        ctx.lineTo(300, 47);
+                        ctx.stroke();
+                             </script>
+                                    </td></tr>
+                                    
+                                    </table>
+                                            
+                            </td>
+                            
+                            
+                           
+                
+                
+            </tr>
+            
+        </table>
+                 <td align="left">
+                     
+                     <table border="0" cellpadding="0" cellspacing="0">
+                         <tr><td align="left">
+                                 <br><br><br><br><br><br>
+                                 <canvas id="myCanvas2" width="300" height="150" style="border:0px solid #000000;">
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+                                 <script>
+                        var c = document.getElementById("myCanvas2");
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                        ctx.arc(100, 47, 5, 0, 2 * Math.PI);
+                        ctx.fillStyle = "black";
+                        ctx.fill(); 
+                        ctx.closePath();
+                        ctx.beginPath();
+                        ctx.arc(100, 130, 10, 0, 2 * Math.PI);
+                        ctx.moveTo(100, 47);
+                        ctx.lineTo(100, 140);
+                        
+                        ctx.font = 'normal 34px sans-serif';
+                        ctx.moveTo(0, 130);
+                        ctx.lineTo(300, 130);                                          
+                        ctx.moveTo(0, 47);
+                        ctx.lineTo(150, 47); 
+                        ctx.rect(150, 20, 60, 60);
+                        ctx.moveTo(210, 47); 
+                        ctx.lineTo(300, 47);
+                        ctx.fillText("H", 167, 60, 50);
+                        ctx.stroke();
+                             </script>
+                    
+                             </td>
+                             
+                             
+                             
+                             
+                             <td align="left">
+                                 
+                                 <table border='0' cellpadding='0' cellspacing='0'><tr><td>
+                                 <center><font style="font-size:32px;color:green;">Receiver's Side</font><br></center>
+                                 <br><br><br><br><canvas id="myCanvas3" width="200" height="150" style="border:0px solid #000000;">
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+                                 <script>
+                        var c = document.getElementById("myCanvas3");
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                        
+                        
+                        
+                        ctx.font = 'normal 24px sans-serif';
+                        ctx.moveTo(0, 130);
+                        ctx.lineTo(20, 130); 
+                        ctx.rect(20, 113, 160, 30);
+                        ctx.moveTo(180, 130); 
+                        ctx.lineTo(200, 130);                                          
+                        ctx.fillText("Measurement", 25, 134, 150);
+    
+                        ctx.moveTo(0, 47);
+                        ctx.lineTo(20, 47); 
+                        ctx.rect(20, 30, 160, 30);
+                        ctx.moveTo(180, 47); 
+                        ctx.lineTo(200, 47);
+                        ctx.fillText("Measurement", 25, 51, 150);
+                        ctx.stroke();
+                             </script>
+                                 </td><td><br><br><br><br><br><br><br>
+                                     <input type="text" name="i1" style="font-size: 20pt;text-align:center;width:30pt;color: red;" value="-" readonly>
+                                     <br><br><br><br>
+                                     <input type="text" name="i2" style="font-size: 20pt;text-align:center;width:30pt;color: red;" value="-" readonly>
+                                 </td></tr></table>
+                             </td>
+                         </tr>
+                         
+                    
+               </table>
+        
+                 </td></tr></table>
+        
+        
+        </form></body></html>

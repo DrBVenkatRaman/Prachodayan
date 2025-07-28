@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title>Prachodayan</title>
+         <script language="javascript">
+             function f1()
+             {      
+                 var gate=document.form1.gate.value;
+                 var q1=document.form1.qubit1.value;
+                 var q2=document.form1.qubit2.value;
+                 var q3=document.form1.qubit3.value;
+                 if(gate=="nothing")
+                 {
+                     alert("Select Gate");
+                 }
+                 else if(q1=="nothing")
+                 {
+                     alert("Select Control Bit-1");
+                 }
+                 else if(q3=="nothing")
+                 {
+                     alert("Select Target Bit");
+                 }
+                 else if(((gate=="fredkin")||(gate=="toffoli"))&&(q2=="nothing"))
+                 {
+                     
+                         alert("Select Control Bit-2");
+                     
+                 }
+                 else
+                 {
+                     if(gate=="CNOT")
+                     {
+                         if(q1=="0")
+                         {
+                            if(q3=="0")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|0>";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|1>";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|+>";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|->";
+                            } 
+                         }
+                         else if(q1=="1")
+                         {
+                             if(q3=="0")
+                            {
+                             document.form1.output1.value="|1>";
+                             document.form1.output3.value="|1>";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="|1>";
+                             document.form1.output3.value="|0>";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="|1>";
+                             document.form1.output3.value="|+>";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="-|1>";
+                             document.form1.output3.value="|->";
+                            } 
+                         }
+                         else if(q1=="+")
+                         {
+                            if(q3=="0")
+                            {
+                             document.form1.output1.value="1/\u221A2 [|00> + |11>]";
+                             document.form1.output3.value="1/\u221A2 [|00> + |11>]";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="1/\u221A2 [|01> + |10>]";
+                             document.form1.output3.value="1/\u221A2 [|01> + |10>]";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="|+>";
+                             document.form1.output3.value="|+>";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="|->";
+                             document.form1.output3.value="|->";
+                            }  
+                         }
+                         else if(q1=="-")
+                         {
+                            if(q3=="0")
+                            {
+                             document.form1.output1.value="1/\u221A2 [|00> - |11>]";
+                             document.form1.output3.value="1/\u221A2 [|00> - |11>]";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="1/\u221A2 [|01> - |10>]";
+                             document.form1.output3.value="1/\u221A2 [|01> - |10>]";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="|->";
+                             document.form1.output3.value="|+>";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="|+>";
+                             document.form1.output3.value="|->";
+                            }  
+                         }
+                     }
+                     else if(gate=="toffoli")
+                     {
+                         var a1,a2,b1,b2,c1,c2;
+                         var e1,e2,e3,e4,e5,e6,e7,e8;
+                         
+                         if(q1=="0"){a1=1;a2=0;}
+                         else if(q1=="1"){a1=0;a2=1;}
+                         else if(q1=="+"){a1=1;a2=1;}
+                         else if(q1=="1"){a1=1;a2=-1;}
+                         
+                         if(q2=="0"){b1=1;b2=0;}
+                         else if(q2=="1"){b1=0;b2=1;}
+                         else if(q2=="+"){b1=1;b2=1;}
+                         else if(q2=="1"){b1=1;b2=-1;}
+                         
+                         if(q3=="0"){c1=1;c2=0;}
+                         else if(q3=="1"){c1=0;c2=1;}
+                         else if(q3=="+"){c1=1;c2=1;}
+                         else if(q3=="1"){c1=1;c2=-1;}
+                         
+                         e1=a1*b1*c1;e2=a1*b1*c2;e3=a1*b2*c1;e4=a1*b2*c2;
+                         e5=a2*b1*c1;e6=a2*b1*c2;e7=a2*b2*c1;e8=a2*b2*c2;
+                         
+                         document.form1.output1.hidden=true;
+                         document.form1.output1text.hidden=false;
+                         document.form1.output3.hidden=true;
+                         document.form1.output3text.hidden=false;
+                         document.form1.output2.value="[ ("+e1+")|000> + ("+e2+")|001> + ("+e3+")|010> + ("+e4+")|011> + ("+e5+")|100> + ("+e6+")|101> + ("+e8+")|110> + ("+e7+")|111> ] / \u221A8";
+                         
+                         
+                     }
+                     else if(gate=="fredkin")
+                     {
+                          var a1,a2,b1,b2,c1,c2;
+                         var e1,e2,e3,e4,e5,e6,e7,e8;
+                         
+                         if(q1=="0"){a1=1;a2=0;}
+                         else if(q1=="1"){a1=0;a2=1;}
+                         else if(q1=="+"){a1=1;a2=1;}
+                         else if(q1=="1"){a1=1;a2=-1;}
+                         
+                         if(q2=="0"){b1=1;b2=0;}
+                         else if(q2=="1"){b1=0;b2=1;}
+                         else if(q2=="+"){b1=1;b2=1;}
+                         else if(q2=="1"){b1=1;b2=-1;}
+                         
+                         if(q3=="0"){c1=1;c2=0;}
+                         else if(q3=="1"){c1=0;c2=1;}
+                         else if(q3=="+"){c1=1;c2=1;}
+                         else if(q3=="1"){c1=1;c2=-1;}
+                         
+                         e1=a1*b1*c1;e2=a1*b1*c2;e3=a1*b2*c1;e4=a1*b2*c2;
+                         e5=a2*b1*c1;e6=a2*b1*c2;e7=a2*b2*c1;e8=a2*b2*c2;
+                         
+                         document.form1.output1.hidden=true;
+                         document.form1.output1text.hidden=false;
+                         document.form1.output3.hidden=true;
+                         document.form1.output3text.hidden=false;
+                         document.form1.output2.value="[ ("+e1+")|000> + ("+e2+")|001> + ("+e3+")|010> + ("+e4+")|011> + ("+e5+")|100> + ("+e7+")|101> + ("+e6+")|110> + ("+e8+")|111> ] / \u221A8";
+                         
+                         
+                     }
+                     else if(gate=="CP")
+                     {
+                          if(q1=="0")
+                         {
+                            if(q3=="0")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|0>";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|1>";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|+>";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|->";
+                            } 
+                         }
+                         else if(q1=="1")
+                         {
+                             if(q3=="0")
+                            {
+                             document.form1.output1.value="|1>";
+                             document.form1.output3.value="|0>";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="|1>";
+                             document.form1.output3.value="0|0> + i|1>";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="[ |10> + i|11> ] / \u221A2";
+                             document.form1.output3.value="[ |10> + i|11> ] / \u221A2";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="[ |10> - i|11> ] / \u221A2";
+                             document.form1.output3.value="[ |10> - i|11> ] / \u221A2";
+                            } 
+                         }
+                         else if(q1=="+")
+                         {
+                            if(q3=="0")
+                            {
+                             document.form1.output1.value="|+>";
+                             document.form1.output3.value="|0>";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="[ |01> + i|11> ] / \u221A2";
+                             document.form1.output3.value="[ |01> + i|11> ] / \u221A2";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="[ |00> + |01> + |10> + i|11> ] / 2";
+                             document.form1.output3.value="[ |00> + |01> + |10> + i|11> ] / 2";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="[ |00> - |01> + |10> - i|11> ] / 2";
+                             document.form1.output3.value="[ |00> - |01> + |10> - i|11> ] / 2";
+                            }  
+                         }
+                         else if(q1=="-")
+                         {
+                            if(q3=="0")
+                            {
+                             document.form1.output1.value="|->";
+                             document.form1.output3.value="|0>";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="|->";
+                             document.form1.output3.value="|1>";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="[ |00> + |01> - |10> - i|11> ] / 2";
+                             document.form1.output3.value="[ |00> + |01> - |10> - i|11> ] / 2";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="[ |00> - |01> - |10> - i|11> ] / 2";
+                             document.form1.output3.value="[ |00> - |01> - |10> - i|11> ] / 2";
+                            }  
+                         }
+                     }
+                     else if(gate=="CZ")
+                     {
+                          if(q1=="0")
+                         {
+                            if(q3=="0")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|0>";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|1>";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|+>";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="|0>";
+                             document.form1.output3.value="|->";
+                            } 
+                         }
+                         else if(q1=="1")
+                         {
+                             if(q3=="0")
+                            {
+                             document.form1.output1.value="|1>";
+                             document.form1.output3.value="|0>";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="|1>";
+                             document.form1.output3.value="-|1>";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="|1>";
+                             document.form1.output3.value="|->";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="|1>";
+                             document.form1.output3.value="|+>";
+                            } 
+                         }
+                         else if(q1=="+")
+                         {
+                            if(q3=="0")
+                            {
+                             document.form1.output1.value="|+>";
+                             document.form1.output3.value="|0>";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="|->";
+                             document.form1.output3.value="|1>";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="[|00>+|01>+|10>-|11>]/2";
+                             document.form1.output3.value="[|00>+|01>+|10>-|11>]/2";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="[|00>-|01>+|10>+|11>]/2";
+                             document.form1.output3.value="[|00>-|01>+|10>+|11>]/2";
+                            }  
+                         }
+                         else if(q1=="-")
+                         {
+                            if(q3=="0")
+                            {
+                             document.form1.output1.value="|->";
+                             document.form1.output3.value="|0>";
+                            }
+                            else if(q3=="1")
+                            {
+                             document.form1.output1.value="|->";
+                             document.form1.output3.value="|1>";
+                            }
+                            else if(q3=="+")
+                            {
+                             document.form1.output1.value="[|00>+|01>-|10>+|11>]/2";
+                             document.form1.output3.value="[|00>+|01>-|10>+|11>]/2";
+                            }
+                            else if(q3=="-")
+                            {
+                             document.form1.output1.value="|->";
+                             document.form1.output3.value="|->";
+                            }  
+                         }
+                     }
+                     else if(gate=="SWAP")
+                     {
+                         
+                         document.form1.output1.value="| "+document.form1.qubit3.value+" > ";
+                         document.form1.output3.value="| "+document.form1.qubit1.value+" > ";
+                     }
+                 }
+             }
+             function draw()
+             { 
+                 var gate=document.form1.gate.value;
+                 if(gate=="CNOT")
+                 {
+                     document.form1.qubit2.hidden=true;
+                     document.form1.qubit2text.hidden=false;
+                     document.form1.output2.hidden=true;
+                     document.form1.output2text.hidden=false;
+                     var c = document.getElementById("myCanvas");
+                     c.width+=0;
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                        ctx.arc(225, 80, 5, 0, 2 * Math.PI);
+                        ctx.fillStyle = "black";
+                        ctx.fill(); 
+                        ctx.closePath();
+                        ctx.beginPath();
+                        ctx.arc(225, 250, 20, 0, 2 * Math.PI);
+                        ctx.font = 'normal 55px sans-serif';
+                        ctx.moveTo(0, 80);
+                        ctx.lineTo(450, 80); 
+                        
+                        ctx.rect(65, 20, 325, 300);
+                        
+                        ctx.moveTo(0, 250);
+                        
+                        ctx.lineTo(450, 250);
+                        
+                        ctx.moveTo(225, 80);
+                        ctx.lineTo(225, 270);
+                        
+                        ctx.stroke();
+                     
+                 }
+                 else if(gate=="fredkin")
+                 {
+                     document.form1.qubit2.hidden=false;
+                     document.form1.qubit2text.hidden=true;
+                     document.form1.output2.hidden=false;
+                     document.form1.output2text.hidden=true;
+                     var c = document.getElementById("myCanvas");
+                     c.width+=0;
+                        var ctx = c.getContext("2d");
+                       ctx.beginPath(); 
+                        ctx.arc(225, 80, 5, 0, 2 * Math.PI);
+                        ctx.fillStyle = "black";
+                        ctx.fill(); 
+                        ctx.closePath();
+                        ctx.beginPath();
+                        
+                        ctx.font = 'normal 55px sans-serif';
+                        ctx.moveTo(0, 80);
+                        ctx.lineTo(450, 80); 
+                        ctx.moveTo(0, 150);
+                        ctx.lineTo(450, 150);
+                        ctx.rect(65, 20, 325, 300);
+                        
+                        ctx.moveTo(0, 250);
+                        
+                        ctx.lineTo(450, 250);
+                        ctx.fillText("X", 207, 170, 80);
+                        ctx.fillText("X", 207, 270, 80);
+                        ctx.moveTo(225, 80);
+                        ctx.lineTo(225, 250);
+                        
+                        ctx.stroke();
+                 }
+                 else if(gate=="SWAP")
+                 {
+                     document.form1.qubit2.hidden=true;
+                     document.form1.qubit2text.hidden=false;
+                     document.form1.output2.hidden=true;
+                     document.form1.output2text.hidden=false;
+                     var c = document.getElementById("myCanvas");
+                     c.width+=0;
+                        var ctx = c.getContext("2d");
+                       
+                        ctx.beginPath();
+                        
+                        ctx.font = 'normal 55px sans-serif';
+                        ctx.moveTo(0, 80);
+                        ctx.lineTo(450, 80); 
+                        
+                        ctx.rect(65, 20, 325, 300);
+                        
+                        ctx.moveTo(0, 250);
+                        
+                        ctx.lineTo(450, 250);
+                        ctx.fillText("X", 207, 100, 80);
+                        ctx.fillText("X", 207, 270, 80);
+                        ctx.moveTo(225, 80);
+                        ctx.lineTo(225, 250);
+                        
+                        ctx.stroke();
+                     
+                 }
+                 else if(gate=="toffoli")
+                 {
+                     document.form1.qubit2.hidden=false;
+                     document.form1.qubit2text.hidden=true;
+                     document.form1.output2.hidden=false;
+                     document.form1.output2text.hidden=true;
+                     var c = document.getElementById("myCanvas");
+                     c.width+=0;
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                        ctx.arc(225, 80, 5, 0, 2 * Math.PI);
+                        ctx.fillStyle = "black";
+                        ctx.fill(); 
+                        ctx.closePath();
+                        ctx.beginPath(); 
+                        ctx.arc(225, 150, 5, 0, 2 * Math.PI);
+                        ctx.fillStyle = "black";
+                        ctx.fill(); 
+                        ctx.closePath();
+                        ctx.beginPath();
+                        ctx.arc(225, 250, 20, 0, 2 * Math.PI);
+                        ctx.font = 'normal 55px sans-serif';
+                        ctx.moveTo(0, 80);
+                        ctx.lineTo(450, 80); 
+                        ctx.moveTo(0, 150);
+                        ctx.lineTo(450, 150);
+                        ctx.rect(65, 20, 325, 300);
+                        
+                        ctx.moveTo(0, 250);
+                        
+                        ctx.lineTo(450, 250);
+                        
+                        ctx.moveTo(225, 80);
+                        ctx.lineTo(225, 270);
+                        
+                        ctx.stroke();
+                     
+                 }
+                 else if(gate=="CZ")
+                 {
+                     document.form1.qubit2.hidden=true;
+                     document.form1.qubit2text.hidden=false;
+                     document.form1.output2.hidden=true;
+                     document.form1.output2text.hidden=false;
+                     var c = document.getElementById("myCanvas");
+                     c.width+=0;
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                        ctx.arc(225, 80, 5, 0, 2 * Math.PI);
+                        ctx.fillStyle = "black";
+                        ctx.fill(); 
+                        ctx.closePath();
+                        ctx.beginPath();
+                        ctx.font = 'normal 55px sans-serif';
+                        ctx.moveTo(0, 80);
+                        ctx.lineTo(450, 80); 
+                        
+                        ctx.rect(65, 20, 325, 300);
+                        ctx.rect(175, 200, 100, 100);
+                        ctx.moveTo(0, 250);
+                        ctx.lineTo(175, 250);
+                        ctx.moveTo(275, 250);
+                        ctx.lineTo(450, 250);
+                        
+                        ctx.moveTo(225, 80);
+                        ctx.lineTo(225, 200);
+                        ctx.fillText("Z", 207, 270, 80);
+                        ctx.stroke();
+                 }
+                 else if(gate=="CP")
+                 {
+                     document.form1.qubit2.hidden=true;
+                     document.form1.qubit2text.hidden=false;
+                     document.form1.output2.hidden=true;
+                     document.form1.output2text.hidden=false;
+                     var c = document.getElementById("myCanvas");
+                     c.width+=0;
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                        ctx.arc(225, 80, 5, 0, 2 * Math.PI);
+                        ctx.fillStyle = "black";
+                        ctx.fill(); 
+                        ctx.closePath();
+                        ctx.beginPath();
+                        ctx.font = 'normal 55px sans-serif';
+                        ctx.moveTo(0, 80);
+                        ctx.lineTo(450, 80); 
+                        
+                        ctx.rect(65, 20, 325, 300);
+                        ctx.rect(175, 200, 100, 100);
+                        ctx.moveTo(0, 250);
+                        ctx.lineTo(175, 250);
+                        ctx.moveTo(275, 250);
+                        ctx.lineTo(450, 250);
+                        
+                        ctx.moveTo(225, 80);
+                        ctx.lineTo(225, 200);
+                        ctx.fillText("S", 207, 270, 80);
+                        ctx.stroke();
+                 }
+                 else
+                 {
+                     document.form1.qubit2.hidden=true;
+                     document.form1.qubit2text.hidden=false;
+                     document.form1.output2.hidden=true;
+                     document.form1.output2text.hidden=false;
+                     var c = document.getElementById("myCanvas");
+                     c.width+=0;
+                     var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                     ctx.rect(65, 20, 325, 300);
+                     ctx.stroke();
+                 }
+             }
+             </script>
+    </head>
+    <body>
+        <form name="form1">
+           <table width="95%" align="center">
+            <tr>
+                <td width="80%">
+                    <font style="font-size:55px" color="green">Prachodayan<br></font><font style="font-size:30px" color="red"><i>Enlightening Minds</i></font>
+                </td>
+                <td align="right"><a href="index.html"><img src="home.jpeg" width="40%"></a></td>
+         
+        <br>
+        <table width="100%" border="1">
+            <tr></tr>
+        </table>
+        <br><br>
+        <table width="100%" align="center" border="1" cellpadding="20" bordercolor='black'>
+           
+            <tr>  
+                <td align="center">
+                    <a href="Courses.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Courses</b></font></a>
+                </td> 
+                <td align="center">
+                    <a href="Research.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Research</b></font></a>
+                </td>  <td align="center">
+                    <a href="AboutUs.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>About Us</b></font></a>
+                </td>
+               
+            </tr>
+        </table><br><br>
+        <table width='30%' border='0'>
+            <tr><td align='center' width='20%'>
+                <a href="QC_Home.html"><font color="black" style="font-size:14px"><img src="qc.png" width="60" height="60"><br>Quantum Computing</font></a>
+                </td></tr>
+        </table>
+        <br><br>
+        <center> <select name="gate" style="font-size: 28pt;" onchange="draw()">
+                <option value="nothing">Select GATE</option><option value="CNOT">CNOT</option>
+                <option value="SWAP">SWAP</option><option value="CZ">Controlled-Z</option>
+                <option value="CP">Controlled Phase</option><option value="toffoli">Toffoli</option>
+                <option value="fredkin">Fredkin</option></select></center>
+        <br><br>
+        
+        <table align="center" width="80%" cellpadding="0" cellspacing="0"><tr>
+                <td align="right" width="30%" style="vertical-align:top;"> 
+                    <br><br><br>
+                    <table border="0" width="100%" cellpadding="0" cellspacing="0" align="right">
+                        <tr><td align="right">
+                    
+                <select name="qubit1" style="font-size: 20pt;">
+                     <option value="nothing">
+                        Control Qubit-1
+                    </option>
+                    <option value="0">
+                        | 0 >
+                    </option>
+                    <option value="1">
+                        | 1 >
+                    </option>
+                    <option value="+">
+                        | + >
+                    </option>
+                    <option value="-">
+                        | - >
+                    </option>
+                </select>
+                            </td></tr>
+                        <tr><td align="right">
+                                
+                              
+                                <br><br>
+                                <input name="qubit2text" style="font-size: 20pt;color:white;border:0pt;">
+                              <select name="qubit2" style="font-size: 20pt;" hidden="true">
+                    <option value="nothing">
+                        Control Qubit-2
+                    </option>
+                    <option value="0">
+                        | 0 >
+                    </option>
+                    <option value="1">
+                        | 1 >
+                    </option>
+                    <option value="+">
+                        | + >
+                    </option>
+                    <option value="-">
+                        | - >
+                    </option>
+                </select>  
+                                
+                            </td></tr>
+                        <tr><td align="right">
+                            <br><br><br><br>
+                              <select name="qubit3" style="font-size: 20pt;">
+                    <option value="nothing">
+                        Target Qubit
+                    </option>
+                    <option value="0">
+                        | 0 >
+                    </option>
+                    <option value="1">
+                        | 1 >
+                    </option>
+                    <option value="+">
+                        | + >
+                    </option>
+                    <option value="-">
+                        | - >
+                    </option>
+                </select>  
+                                
+                            </td></tr>
+                        
+                        </table>
+                
+            </td>
+            
+                
+                <td>
+          
+                    <canvas id="myCanvas" width="450" height="400" style="border:0px solid #000000;">
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+                    <script>
+                        
+                        var c = document.getElementById("myCanvas");
+                     c.width+=0;
+                     var ctx = c.getContext("2d");
+                        ctx.beginPath(); 
+                     ctx.rect(65, 20, 325, 300);
+                     ctx.stroke();
+                    </script>
+                    
+                </td>
+                 <td align="left" width="30%" style="vertical-align: top;"> 
+                    <br><br><br>
+                    <table border="0" width="100%" cellpadding="0" cellspacing="0" align="right">
+                        <tr><td align="left">
+                   <input name="output1text" style="font-size: 20pt;color:white;border:0pt;" hidden="true"> 
+                <input type="text" name="output1" value="(Control) Output1" style="font-size: 20pt;" readonly>
+                     
+                            </td></tr>
+                        <tr><td align="left">
+                            <br><br>
+                            <input name="output2text" style="font-size: 20pt;color:white;border:0pt;">
+                              <input type="text" name="output2" value="(Control) Output2" style="font-size: 20pt;" hidden="true" readonly>
+                 
+                                
+                            </td></tr>
+                        <tr><td align="left">
+                                <br><br><br><br>
+                                <input name="output3text" style="font-size: 20pt;color:white;border:0pt;" hidden="true">
+                              <input type="text" name="output3" value="(Target) Output" style="font-size: 20pt;" readonly>
+                 
+                                
+                            </td></tr>
+                        
+                        </table>
+                
+            </td>
+            
+            
+            </tr></table>
+        <center><input type="button" value="Submit" style="width:100pt; font-size: 24pt;" onclick="f1()"></center>
+        
+        </form></body></html>

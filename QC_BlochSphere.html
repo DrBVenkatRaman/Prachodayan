@@ -1,0 +1,259 @@
+<html>
+    <head>
+        <script>
+            function clearC()
+            {
+                var canvas = document.getElementById("myCanvas");
+                canvas.width+=0;
+                var canvas1 = document.getElementById("myCanvas1");
+                canvas1.width+=0;
+                var canvas2 = document.getElementById("myCanvas2");
+                canvas2.width+=0;
+            }
+            function draw() {
+              clearC(); 
+              loadC();
+              var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+    var canvas1 = document.getElementById("myCanvas1");
+    var context1 = canvas1.getContext("2d");
+    var canvas2 = document.getElementById("myCanvas2");
+    var context2 = canvas2.getContext("2d");
+    
+    var val1=document.f1.qubitTheta.value;
+    var val2=document.f1.qubitPhi.value;
+    
+    if(val1=="0")
+    {
+        posx=195;
+        posy=45;
+    posx1 = 195;
+    posy1 = 45;
+    posx2=195;
+    posy2=150;
+    }
+    else if(val1=="180")
+    {
+        posx=195;
+        posy=325;
+    posx1 = 195;
+    posy1 = 250;
+    posx2=195;
+    posy2=150;
+    }
+    else if((val1=="90"&&val2=="0")||(val1=="90"&&val2=="360"))
+    {
+        posx=340;
+        posy=192;
+    posx1 = 295;
+    posy1 = 150;
+    posx2=295;
+    posy2=150;
+    }
+    else if((val1=="90")&&(val2=="180"))
+    {
+        posx=55;
+        posy=192;
+    posx1 = 95;
+    posy1 = 150;
+    posx2=95;
+    posy2=150;
+    }
+    else if(val1=="90"&&val2=="270")
+    {
+        posx=195;
+        posy=228;
+    posx1 = 195;
+    posy1 = 150;
+    posx2=195;
+    posy2=250;
+    }
+    else if(val1=="90"&&val2=="90")
+    {
+        posx=195;
+        posy=158;
+    posx1 = 195;
+    posy1 = 150;
+    posx2=195;
+    posy2=45;
+    }
+    
+    context.fillStyle = "green";
+    context.beginPath();
+    context.arc(posx, posy, 10, 0, 2*Math.PI);
+    context.fill();
+    
+    context1.fillStyle = "blue";
+    context1.beginPath();
+    context1.arc(posx1, posy1, 10, 0, 2*Math.PI);
+    context1.fill();
+    
+    context2.fillStyle = "red";
+    context2.beginPath();
+    context2.arc(posx2, posy2, 10, 0, 2*Math.PI);
+    context2.fill();
+}
+
+        
+    function loadC2(){
+var c = document.getElementById("myCanvas2");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(195, 148, 100, 0, 2 * Math.PI);
+ctx.moveTo(195, 250);
+ctx.lineTo(195, 45);
+ctx.font = ctx.font = 'bold 20px sans-serif';
+ctx.fillText(" - Y Axis", 190, 280, 50)
+ctx.fillText(" + Y Axis", 190, 40, 50)
+ctx.moveTo(95, 150);
+ctx.lineTo(295, 150);
+ctx.fillText(" - X Axis", 40, 130, 50)
+ctx.fillText(" + X Axis", 300, 130, 50)
+ctx.stroke();
+    }
+    
+    function loadC()
+    {loadC1();
+        loadC2();
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("sphere");
+        ctx.drawImage(img, 50, 2);
+        var c0 = document.getElementById("myCanvas0");
+        var ctx0 = c0.getContext("2d");
+        var img0 = document.getElementById("sphere0");
+        ctx0.drawImage(img0, 50, 2);
+        
+    }
+
+    function loadC1(){
+var c = document.getElementById("myCanvas1");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(195, 148, 100, 0, 2 * Math.PI);
+ctx.font = ctx.font = 'bold 28px sans-serif';
+ctx.fillText("| 0 >", 185, 30, 30)
+ctx.fillText("| 1 >", 185, 280, 30)
+ctx.font = ctx.font = 'bold 20px sans-serif';
+ctx.fillText("Z Axis", 140, 175, 50)
+//ctx.moveTo(195, 150);
+ctx.moveTo(195, 250);
+ctx.lineTo(195, 45);
+//ctx.strokeStyle = '#808000'
+ctx.stroke();
+    }
+</script>
+    </head>
+<body onLoad="draw()">
+
+    
+    <img id="sphere" width="220" height="277" src="3DSphere.jpg" alt="Qubit - BlochSphere" hidden="true">
+    <img id="sphere0" width="220" height="277" src="3DSphere3.jpg" alt="Qubit - BlochSphere" hidden="true">
+    <table width="95%" align="center">
+            <tr>
+                <td width="80%">
+                    <font style="font-size:55px" color="green">Prachodayan<br></font><font style="font-size:30px" color="red"><i>Enlightening Minds</i></font>
+                </td>
+                <td align="right"><a href="index.html"><img src="home.jpeg" width="40%"></a></td>
+         
+        <br>
+        <table width="100%" border="1">
+            <tr></tr>
+        </table>
+        <br><br>
+        <table width="100%" align="center" border="1" cellpadding="20" bordercolor='black'>
+           
+            <tr>  
+                <td align="center">
+                    <a href="Courses.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Courses</b></font></a>
+                </td> 
+                <td align="center">
+                    <a href="Research.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Research</b></font></a>
+                </td>  <td align="center">
+                    <a href="AboutUs.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>About Us</b></font></a>
+                </td>
+               
+            </tr>
+        </table><br><br>
+        <table width='30%' border='0'>
+            <tr><td align='center' width='20%'>
+                <a href="QC_Home.html"><font color="black" style="font-size:14px"><img src="qc.png" width="60" height="60"><br>Quantum Computing</font></a>
+                </td></tr>
+        </table>
+        <br><br>
+        
+        <center><font style="font-size:3vw">BlochSphere Representation</font><br><br>
+        <br>
+<center><form name="f1">
+    <table width="60%" align="center">
+        <tr><td align="center"> 
+                <select name="qubitTheta" style="font-size: 20pt;text-align:center;" onChange="draw()">
+                    <option>
+                        Select &theta; Value
+                    </option>
+                    <option value="0">
+                        0
+                    </option>
+                    <option value="90">
+                        &Pi;/2
+                    </option>
+                    <option value="180">
+                        &Pi;
+                    </option>
+                    
+                </select>
+                <select name="qubitPhi" style="font-size: 20pt;text-align:center;" onChange="draw()">
+                    <option>
+                        Select &phi; Value
+                    </option>
+                    <option value="0">
+                        0
+                    </option>
+                    <option value="90">
+                        &Pi;/2
+                    </option>
+                    <option value="180">
+                        &Pi;
+                    </option>
+                    <option value="270">
+                        3&Pi;/2
+                    </option>
+                    <option value="360">
+                        2&Pi;
+                    </option>
+                </select>
+            </td>
+        </tr></table>
+    
+    </form>
+    
+        <table align="center" width="60%">
+        <tr><td align="center"><canvas id="myCanvas" width="405" height="400" style="border:1px solid #d3d3d3;">
+                    Your browser does not support the HTML5 canvas tag.</canvas><br>3D View
+
+ </td>
+       
+        </tr>
+    </table><br>
+    
+    
+    
+    
+    <table align="center" width="60%">
+        <tr><td align="center"><canvas id="myCanvas1" width="405" height="300" style="border:1px solid #d3d3d3;">
+                    Your browser does not support the HTML5 canvas tag.</canvas><br>Front View
+
+ </td>
+        <td align="center"><canvas id="myCanvas2" width="405" height="300" style="border:1px solid #d3d3d3;">
+                Your browser does not support the HTML5 canvas tag.</canvas><br>Top View
+
+ </td>
+        </tr>
+    </table>
+    <table align="center" width="60%"><tr>
+ <td align="center"><canvas id="myCanvas0" width="405" height="400" style="border:1px solid #d3d3d3;">
+         Your browser does not support the HTML5 canvas tag.</canvas><br>&theta; and &phi; angles illustration
+
+ </td></tr></table>
+</body>
+</html>

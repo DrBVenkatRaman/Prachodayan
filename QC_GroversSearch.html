@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title>Prachodayan</title>
+         
+         <script>
+             var elements;
+             function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  elements=array;
+  return array;
+}
+             function draw()
+             {
+                 var vals = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p'];
+                 var random = shuffle(vals);
+                 var n=document.f1.n.value;
+                 document.f1.a120.hidden=document.f1.q120.hidden=document.f1.l120.hidden=document.f1.e120.hidden=true;
+document.f1.a22.hidden=document.f1.q22.hidden=document.f1.l22.hidden=document.f1.e22.hidden=true;
+document.f1.a32.hidden=document.f1.q32.hidden=document.f1.l32.hidden=document.f1.e32.hidden=true;
+document.f1.a42.hidden=document.f1.q42.hidden=document.f1.l42.hidden=document.f1.e42.hidden=true;
+document.f1.a52.hidden=document.f1.q52.hidden=document.f1.l52.hidden=document.f1.e52.hidden=true;
+document.f1.a62.hidden=document.f1.q62.hidden=document.f1.l62.hidden=document.f1.e62.hidden=true;
+document.f1.a72.hidden=document.f1.q72.hidden=document.f1.l72.hidden=document.f1.e72.hidden=true;
+document.f1.a82.hidden=document.f1.q82.hidden=document.f1.l82.hidden=document.f1.e82.hidden=true;
+document.f1.a92.hidden=document.f1.q92.hidden=document.f1.l92.hidden=document.f1.e92.hidden=true;
+document.f1.a102.hidden=document.f1.q102.hidden=document.f1.l102.hidden=document.f1.e102.hidden=true;
+document.f1.a112.hidden=document.f1.q112.hidden=document.f1.l112.hidden=document.f1.e112.hidden=true;
+document.f1.a122.hidden=document.f1.q122.hidden=document.f1.l122.hidden=document.f1.e122.hidden=true;
+document.f1.a132.hidden=document.f1.q132.hidden=document.f1.l132.hidden=document.f1.e132.hidden=true;
+document.f1.a142.hidden=document.f1.q142.hidden=document.f1.l142.hidden=document.f1.e142.hidden=true;
+document.f1.a152.hidden=document.f1.q152.hidden=document.f1.l152.hidden=document.f1.e152.hidden=true;
+document.f1.a162.hidden=document.f1.q162.hidden=document.f1.l162.hidden=document.f1.e162.hidden=true;
+                 if(n==2)
+                 {
+document.f1.a1.value=document.f1.a2.value=document.f1.a120.value=document.f1.a22.value="1/\u221A2";
+document.f1.q1.value=document.f1.q120.value="|0>";
+document.f1.q2.value=document.f1.q22.value="|1>";
+document.f1.e1.value=document.f1.e120.value=random[0];
+document.f1.e2.value=document.f1.e22.value=random[1];
+
+
+document.f1.a1.hidden=document.f1.q1.hidden=document.f1.l1.hidden=document.f1.e1.hidden=false;
+document.f1.a2.hidden=document.f1.q2.hidden=document.f1.l2.hidden=document.f1.e2.hidden=false;
+document.f1.a3.hidden=document.f1.q3.hidden=document.f1.l3.hidden=document.f1.e3.hidden=true;
+document.f1.a4.hidden=document.f1.q4.hidden=document.f1.l4.hidden=document.f1.e4.hidden=true;
+document.f1.a5.hidden=document.f1.q5.hidden=document.f1.l5.hidden=document.f1.e5.hidden=true;
+document.f1.a6.hidden=document.f1.q6.hidden=document.f1.l6.hidden=document.f1.e6.hidden=true;
+document.f1.a7.hidden=document.f1.q7.hidden=document.f1.l7.hidden=document.f1.e7.hidden=true;
+document.f1.a8.hidden=document.f1.q8.hidden=document.f1.l8.hidden=document.f1.e8.hidden=true;
+document.f1.a9.hidden=document.f1.q9.hidden=document.f1.l9.hidden=document.f1.e9.hidden=true;
+document.f1.a10.hidden=document.f1.q10.hidden=document.f1.l10.hidden=document.f1.e10.hidden=true;
+document.f1.a11.hidden=document.f1.q11.hidden=document.f1.l11.hidden=document.f1.e11.hidden=true;
+document.f1.a12.hidden=document.f1.q12.hidden=document.f1.l12.hidden=document.f1.e12.hidden=true;
+document.f1.a13.hidden=document.f1.q13.hidden=document.f1.l13.hidden=document.f1.e13.hidden=true;
+document.f1.a14.hidden=document.f1.q14.hidden=document.f1.l14.hidden=document.f1.e14.hidden=true;
+document.f1.a15.hidden=document.f1.q15.hidden=document.f1.l15.hidden=document.f1.e15.hidden=true;
+document.f1.a16.hidden=document.f1.q16.hidden=document.f1.l16.hidden=document.f1.e16.hidden=true;
+
+                     
+                     
+                 }
+                 else if(n==4)
+                 {
+                     
+                     document.f1.a1.value=document.f1.a2.value=document.f1.a3.value=document.f1.a4.value=document.f1.a120.value=document.f1.a22.value=document.f1.a32.value=document.f1.a42.value="1/2";
+document.f1.q1.value=document.f1.q120.value="|00>";
+document.f1.q2.value=document.f1.q22.value="|01>";
+document.f1.q3.value=document.f1.q32.value="|10>";
+document.f1.q4.value=document.f1.q42.value="|11>";
+document.f1.e1.value=document.f1.e120.value=random[0];
+document.f1.e2.value=document.f1.e22.value=random[1];
+document.f1.e3.value=document.f1.e32.value=random[2];
+document.f1.e4.value=document.f1.e42.value=random[3];
+                     
+document.f1.a1.hidden=document.f1.q1.hidden=document.f1.l1.hidden=document.f1.e1.hidden=false;
+document.f1.a2.hidden=document.f1.q2.hidden=document.f1.l2.hidden=document.f1.e2.hidden=false;
+document.f1.a3.hidden=document.f1.q3.hidden=document.f1.l3.hidden=document.f1.e3.hidden=false;
+document.f1.a4.hidden=document.f1.q4.hidden=document.f1.l4.hidden=document.f1.e4.hidden=false;
+document.f1.a5.hidden=document.f1.q5.hidden=document.f1.l5.hidden=document.f1.e5.hidden=true;
+document.f1.a6.hidden=document.f1.q6.hidden=document.f1.l6.hidden=document.f1.e6.hidden=true;
+document.f1.a7.hidden=document.f1.q7.hidden=document.f1.l7.hidden=document.f1.e7.hidden=true;
+document.f1.a8.hidden=document.f1.q8.hidden=document.f1.l8.hidden=document.f1.e8.hidden=true;
+document.f1.a9.hidden=document.f1.q9.hidden=document.f1.l9.hidden=document.f1.e9.hidden=true;
+document.f1.a10.hidden=document.f1.q10.hidden=document.f1.l10.hidden=document.f1.e10.hidden=true;
+document.f1.a11.hidden=document.f1.q11.hidden=document.f1.l11.hidden=document.f1.e11.hidden=true;
+document.f1.a12.hidden=document.f1.q12.hidden=document.f1.l12.hidden=document.f1.e12.hidden=true;
+document.f1.a13.hidden=document.f1.q13.hidden=document.f1.l13.hidden=document.f1.e13.hidden=true;
+document.f1.a14.hidden=document.f1.q14.hidden=document.f1.l14.hidden=document.f1.e14.hidden=true;
+document.f1.a15.hidden=document.f1.q15.hidden=document.f1.l15.hidden=document.f1.e15.hidden=true;
+document.f1.a16.hidden=document.f1.q16.hidden=document.f1.l16.hidden=document.f1.e16.hidden=true;
+                 
+                     
+                 }
+                 else if(n==8)
+                 {
+                     document.f1.a1.value=document.f1.a2.value=document.f1.a3.value=document.f1.a4.value=document.f1.a120.value=document.f1.a22.value=document.f1.a32.value=document.f1.a42.value="1/\u221A8";
+document.f1.a5.value=document.f1.a6.value=document.f1.a7.value=document.f1.a8.value=document.f1.a52.value=document.f1.a62.value=document.f1.a72.value=document.f1.a82.value="1/\u221A8";
+document.f1.q1.value=document.f1.q120.value="|000>";
+document.f1.q2.value=document.f1.q22.value="|001>";
+document.f1.q3.value=document.f1.q32.value="|010>";
+document.f1.q4.value=document.f1.q42.value="|011>";
+document.f1.q5.value=document.f1.q52.value="|100>";
+document.f1.q6.value=document.f1.q62.value="|101>";
+document.f1.q7.value=document.f1.q72.value="|110>";
+document.f1.q8.value=document.f1.q82.value="|111>";
+document.f1.e1.value=document.f1.e120.value=random[0];
+document.f1.e2.value=document.f1.e22.value=random[1];
+document.f1.e3.value=document.f1.e32.value=random[2];
+document.f1.e4.value=document.f1.e42.value=random[3];
+document.f1.e5.value=document.f1.e52.value=random[4];
+document.f1.e6.value=document.f1.e62.value=random[5];
+document.f1.e7.value=document.f1.e72.value=random[6];
+document.f1.e8.value=document.f1.e82.value=random[7];
+
+document.f1.a1.hidden=document.f1.q1.hidden=document.f1.l1.hidden=document.f1.e1.hidden=false;
+document.f1.a2.hidden=document.f1.q2.hidden=document.f1.l2.hidden=document.f1.e2.hidden=false;
+document.f1.a3.hidden=document.f1.q3.hidden=document.f1.l3.hidden=document.f1.e3.hidden=false;
+document.f1.a4.hidden=document.f1.q4.hidden=document.f1.l4.hidden=document.f1.e4.hidden=false;
+document.f1.a5.hidden=document.f1.q5.hidden=document.f1.l5.hidden=document.f1.e5.hidden=false;
+document.f1.a6.hidden=document.f1.q6.hidden=document.f1.l6.hidden=document.f1.e6.hidden=false;
+document.f1.a7.hidden=document.f1.q7.hidden=document.f1.l7.hidden=document.f1.e7.hidden=false;
+document.f1.a8.hidden=document.f1.q8.hidden=document.f1.l8.hidden=document.f1.e8.hidden=false;
+document.f1.a9.hidden=document.f1.q9.hidden=document.f1.l9.hidden=document.f1.e9.hidden=true;
+document.f1.a10.hidden=document.f1.q10.hidden=document.f1.l10.hidden=document.f1.e10.hidden=true;
+document.f1.a11.hidden=document.f1.q11.hidden=document.f1.l11.hidden=document.f1.e11.hidden=true;
+document.f1.a12.hidden=document.f1.q12.hidden=document.f1.l12.hidden=document.f1.e12.hidden=true;
+document.f1.a13.hidden=document.f1.q13.hidden=document.f1.l13.hidden=document.f1.e13.hidden=true;
+document.f1.a14.hidden=document.f1.q14.hidden=document.f1.l14.hidden=document.f1.e14.hidden=true;
+document.f1.a15.hidden=document.f1.q15.hidden=document.f1.l15.hidden=document.f1.e15.hidden=true;
+document.f1.a16.hidden=document.f1.q16.hidden=document.f1.l16.hidden=document.f1.e16.hidden=true;
+                   
+                     
+                 }
+                 else if(n==16)
+                 {
+                    document.f1.a1.value=document.f1.a2.value=document.f1.a3.value=document.f1.a4.value=document.f1.a120.value=document.f1.a22.value=document.f1.a32.value=document.f1.a42.value="1/4";
+document.f1.a5.value=document.f1.a6.value=document.f1.a7.value=document.f1.a8.value=document.f1.a52.value=document.f1.a62.value=document.f1.a72.value=document.f1.a82.value="1/4";
+document.f1.a9.value=document.f1.a10.value=document.f1.a11.value=document.f1.a12.value=document.f1.a92.value=document.f1.a102.value=document.f1.a112.value=document.f1.a122.value="1/4";
+document.f1.a13.value=document.f1.a14.value=document.f1.a15.value=document.f1.a16.value=document.f1.a132.value=document.f1.a142.value=document.f1.a152.value=document.f1.a162.value="1/4";
+
+document.f1.q1.value=document.f1.q120.value="|0000>";
+document.f1.q2.value=document.f1.q22.value="|0001>";
+document.f1.q3.value=document.f1.q32.value="|0010>";
+document.f1.q4.value=document.f1.q42.value="|0011>";
+document.f1.q5.value=document.f1.q52.value="|0100>";
+document.f1.q6.value=document.f1.q62.value="|0101>";
+document.f1.q7.value=document.f1.q72.value="|0110>";
+document.f1.q8.value=document.f1.q82.value="|0111>";
+document.f1.q9.value=document.f1.q92.value="|1000>";
+document.f1.q10.value=document.f1.q102.value="|1001>";
+document.f1.q11.value=document.f1.q112.value="|1010>";
+document.f1.q12.value=document.f1.q122.value="|1011>";
+document.f1.q13.value=document.f1.q132.value="|1100>";
+document.f1.q14.value=document.f1.q142.value="|1101>";
+document.f1.q15.value=document.f1.q152.value="|1110>";
+document.f1.q16.value=document.f1.q162.value="|1111>";
+
+document.f1.e1.value=document.f1.e120.value=random[0];
+document.f1.e2.value=document.f1.e22.value=random[1];
+document.f1.e3.value=document.f1.e32.value=random[2];
+document.f1.e4.value=document.f1.e42.value=random[3];
+document.f1.e5.value=document.f1.e52.value=random[4];
+document.f1.e6.value=document.f1.e62.value=random[5];
+document.f1.e7.value=document.f1.e72.value=random[6];
+document.f1.e8.value=document.f1.e82.value=random[7];
+document.f1.e9.value=document.f1.e92.value=random[8];
+document.f1.e10.value=document.f1.e102.value=random[9];
+document.f1.e11.value=document.f1.e112.value=random[10];
+document.f1.e12.value=document.f1.e122.value=random[11];
+document.f1.e13.value=document.f1.e132.value=random[12];
+document.f1.e14.value=document.f1.e142.value=random[13];
+document.f1.e15.value=document.f1.e152.value=random[14];
+document.f1.e16.value=document.f1.e162.value=random[15];
+document.f1.a1.hidden=document.f1.q1.hidden=document.f1.l1.hidden=document.f1.e1.hidden=false;
+document.f1.a2.hidden=document.f1.q2.hidden=document.f1.l2.hidden=document.f1.e2.hidden=false;
+document.f1.a3.hidden=document.f1.q3.hidden=document.f1.l3.hidden=document.f1.e3.hidden=false;
+document.f1.a4.hidden=document.f1.q4.hidden=document.f1.l4.hidden=document.f1.e4.hidden=false;
+document.f1.a5.hidden=document.f1.q5.hidden=document.f1.l5.hidden=document.f1.e5.hidden=false;
+document.f1.a6.hidden=document.f1.q6.hidden=document.f1.l6.hidden=document.f1.e6.hidden=false;
+document.f1.a7.hidden=document.f1.q7.hidden=document.f1.l7.hidden=document.f1.e7.hidden=false;
+document.f1.a8.hidden=document.f1.q8.hidden=document.f1.l8.hidden=document.f1.e8.hidden=false;
+document.f1.a9.hidden=document.f1.q9.hidden=document.f1.l9.hidden=document.f1.e9.hidden=false;
+document.f1.a10.hidden=document.f1.q10.hidden=document.f1.l10.hidden=document.f1.e10.hidden=false;
+document.f1.a11.hidden=document.f1.q11.hidden=document.f1.l11.hidden=document.f1.e11.hidden=false;
+document.f1.a12.hidden=document.f1.q12.hidden=document.f1.l12.hidden=document.f1.e12.hidden=false;
+document.f1.a13.hidden=document.f1.q13.hidden=document.f1.l13.hidden=document.f1.e13.hidden=false;
+document.f1.a14.hidden=document.f1.q14.hidden=document.f1.l14.hidden=document.f1.e14.hidden=false;
+document.f1.a15.hidden=document.f1.q15.hidden=document.f1.l15.hidden=document.f1.e15.hidden=false;
+document.f1.a16.hidden=document.f1.q16.hidden=document.f1.l16.hidden=document.f1.e16.hidden=false;
+
+                     
+                     
+                 }
+                 else
+                 {
+document.f1.a1.hidden=document.f1.q1.hidden=document.f1.l1.hidden=document.f1.e1.hidden=true;
+document.f1.a2.hidden=document.f1.q2.hidden=document.f1.l2.hidden=document.f1.e2.hidden=true;
+document.f1.a3.hidden=document.f1.q3.hidden=document.f1.l3.hidden=document.f1.e3.hidden=true;
+document.f1.a4.hidden=document.f1.q4.hidden=document.f1.l4.hidden=document.f1.e4.hidden=true;
+document.f1.a5.hidden=document.f1.q5.hidden=document.f1.l5.hidden=document.f1.e5.hidden=true;
+document.f1.a6.hidden=document.f1.q6.hidden=document.f1.l6.hidden=document.f1.e6.hidden=true;
+document.f1.a7.hidden=document.f1.q7.hidden=document.f1.l7.hidden=document.f1.e7.hidden=true;
+document.f1.a8.hidden=document.f1.q8.hidden=document.f1.l8.hidden=document.f1.e8.hidden=true;
+document.f1.a9.hidden=document.f1.q9.hidden=document.f1.l9.hidden=document.f1.e9.hidden=true;
+document.f1.a10.hidden=document.f1.q10.hidden=document.f1.l10.hidden=document.f1.e10.hidden=true;
+document.f1.a11.hidden=document.f1.q11.hidden=document.f1.l11.hidden=document.f1.e11.hidden=true;
+document.f1.a12.hidden=document.f1.q12.hidden=document.f1.l12.hidden=document.f1.e12.hidden=true;
+document.f1.a13.hidden=document.f1.q13.hidden=document.f1.l13.hidden=document.f1.e13.hidden=true;
+document.f1.a14.hidden=document.f1.q14.hidden=document.f1.l14.hidden=document.f1.e14.hidden=true;
+document.f1.a15.hidden=document.f1.q15.hidden=document.f1.l15.hidden=document.f1.e15.hidden=true;
+document.f1.a16.hidden=document.f1.q16.hidden=document.f1.l16.hidden=document.f1.e16.hidden=true;
+document.f1.a120.hidden=document.f1.q120.hidden=document.f1.l120.hidden=document.f1.e120.hidden=true;
+document.f1.a22.hidden=document.f1.q22.hidden=document.f1.l22.hidden=document.f1.e22.hidden=true;
+document.f1.a32.hidden=document.f1.q32.hidden=document.f1.l32.hidden=document.f1.e32.hidden=true;
+document.f1.a42.hidden=document.f1.q42.hidden=document.f1.l42.hidden=document.f1.e42.hidden=true;
+document.f1.a52.hidden=document.f1.q52.hidden=document.f1.l52.hidden=document.f1.e52.hidden=true;
+document.f1.a62.hidden=document.f1.q62.hidden=document.f1.l62.hidden=document.f1.e62.hidden=true;
+document.f1.a72.hidden=document.f1.q72.hidden=document.f1.l72.hidden=document.f1.e72.hidden=true;
+document.f1.a82.hidden=document.f1.q82.hidden=document.f1.l82.hidden=document.f1.e82.hidden=true;
+document.f1.a92.hidden=document.f1.q92.hidden=document.f1.l92.hidden=document.f1.e92.hidden=true;
+document.f1.a102.hidden=document.f1.q102.hidden=document.f1.l102.hidden=document.f1.e102.hidden=true;
+document.f1.a112.hidden=document.f1.q112.hidden=document.f1.l112.hidden=document.f1.e112.hidden=true;
+document.f1.a122.hidden=document.f1.q122.hidden=document.f1.l122.hidden=document.f1.e122.hidden=true;
+document.f1.a132.hidden=document.f1.q132.hidden=document.f1.l132.hidden=document.f1.e132.hidden=true;
+document.f1.a142.hidden=document.f1.q142.hidden=document.f1.l142.hidden=document.f1.e142.hidden=true;
+document.f1.a152.hidden=document.f1.q152.hidden=document.f1.l152.hidden=document.f1.e152.hidden=true;
+document.f1.a162.hidden=document.f1.q162.hidden=document.f1.l162.hidden=document.f1.e162.hidden=true;
+                     
+                     
+                     
+                 }
+                 showbuttons();
+             }
+             
+             
+          function showbuttons()
+          {
+              var n=document.f1.n.value;
+              var s=document.f1.s.value;
+              document.f1.result.hidden=true;
+              document.f1.a120.value=document.f1.a1.value;
+document.f1.a22.value=document.f1.a2.value;
+document.f1.a32.value=document.f1.a3.value;
+document.f1.a42.value=document.f1.a4.value;
+document.f1.a52.value=document.f1.a5.value;
+document.f1.a62.value=document.f1.a6.value;
+document.f1.a72.value=document.f1.a7.value;
+document.f1.a82.value=document.f1.a8.value;
+document.f1.a92.value=document.f1.a9.value;
+document.f1.a102.value=document.f1.a10.value;
+document.f1.a112.value=document.f1.a11.value;
+document.f1.a122.value=document.f1.a12.value;
+document.f1.a132.value=document.f1.a13.value;
+document.f1.a142.value=document.f1.a14.value;
+document.f1.a152.value=document.f1.a15.value;
+document.f1.a162.value=document.f1.a16.value;
+              if((n=="nothing")||(s=="nothing"))
+              {
+                  document.f1.button1.hidden=true;
+                  document.f1.button2.hidden=true;
+                  document.f1.button3.hidden=true;
+                  document.f1.button4.hidden=true;
+                   document.f1.a120.hidden=document.f1.q120.hidden=document.f1.l120.hidden=document.f1.e120.hidden=true;
+document.f1.a22.hidden=document.f1.q22.hidden=document.f1.l22.hidden=document.f1.e22.hidden=true;
+document.f1.a32.hidden=document.f1.q32.hidden=document.f1.l32.hidden=document.f1.e32.hidden=true;
+document.f1.a42.hidden=document.f1.q42.hidden=document.f1.l42.hidden=document.f1.e42.hidden=true;
+document.f1.a52.hidden=document.f1.q52.hidden=document.f1.l52.hidden=document.f1.e52.hidden=true;
+document.f1.a62.hidden=document.f1.q62.hidden=document.f1.l62.hidden=document.f1.e62.hidden=true;
+document.f1.a72.hidden=document.f1.q72.hidden=document.f1.l72.hidden=document.f1.e72.hidden=true;
+document.f1.a82.hidden=document.f1.q82.hidden=document.f1.l82.hidden=document.f1.e82.hidden=true;
+document.f1.a92.hidden=document.f1.q92.hidden=document.f1.l92.hidden=document.f1.e92.hidden=true;
+document.f1.a102.hidden=document.f1.q102.hidden=document.f1.l102.hidden=document.f1.e102.hidden=true;
+document.f1.a112.hidden=document.f1.q112.hidden=document.f1.l112.hidden=document.f1.e112.hidden=true;
+document.f1.a122.hidden=document.f1.q122.hidden=document.f1.l122.hidden=document.f1.e122.hidden=true;
+document.f1.a132.hidden=document.f1.q132.hidden=document.f1.l132.hidden=document.f1.e132.hidden=true;
+document.f1.a142.hidden=document.f1.q142.hidden=document.f1.l142.hidden=document.f1.e142.hidden=true;
+document.f1.a152.hidden=document.f1.q152.hidden=document.f1.l152.hidden=document.f1.e152.hidden=true;
+document.f1.a162.hidden=document.f1.q162.hidden=document.f1.l162.hidden=document.f1.e162.hidden=true;
+              }
+              else if(n=="2")
+              {
+                  document.f1.button1.hidden=false;
+                  document.f1.button2.hidden=false;
+                  document.f1.button3.hidden=true;
+                  document.f1.button4.hidden=true;
+              }
+              else if(n=="4")
+              {
+                  document.f1.button1.hidden=false;
+                  document.f1.button2.hidden=false;
+                  document.f1.button3.hidden=true;
+                  document.f1.button4.hidden=true;
+              }
+              else if(n=="8")
+              {
+                  document.f1.button1.hidden=false;
+                  document.f1.button2.hidden=false;
+                  document.f1.button3.hidden=false;
+                  document.f1.button4.hidden=true;
+              }
+              else if(n=="16")
+              {
+                  document.f1.button1.hidden=false;
+                  document.f1.button2.hidden=false;
+                  document.f1.button3.hidden=false;
+                  document.f1.button4.hidden=false;
+              }
+              else
+              {
+                  document.f1.button1.hidden=true;
+                  document.f1.button2.hidden=true;
+                  document.f1.button3.hidden=true;
+                  document.f1.button4.hidden=true;
+              }
+          }
+          
+          function iteration1()
+          {
+             var n=document.f1.n.value;
+             document.f1.result.hidden=true;
+             document.f1.a120.value=document.f1.a1.value;
+document.f1.a22.value=document.f1.a2.value;
+document.f1.a32.value=document.f1.a3.value;
+document.f1.a42.value=document.f1.a4.value;
+document.f1.a52.value=document.f1.a5.value;
+document.f1.a62.value=document.f1.a6.value;
+document.f1.a72.value=document.f1.a7.value;
+document.f1.a82.value=document.f1.a8.value;
+document.f1.a92.value=document.f1.a9.value;
+document.f1.a102.value=document.f1.a10.value;
+document.f1.a112.value=document.f1.a11.value;
+document.f1.a122.value=document.f1.a12.value;
+document.f1.a132.value=document.f1.a13.value;
+document.f1.a142.value=document.f1.a14.value;
+document.f1.a152.value=document.f1.a15.value;
+document.f1.a162.value=document.f1.a16.value;
+             if(n==2)
+             {
+                 document.f1.a120.hidden=document.f1.q120.hidden=document.f1.l120.hidden=document.f1.e120.hidden=false;
+                 document.f1.a22.hidden=document.f1.q22.hidden=document.f1.l22.hidden=document.f1.e22.hidden=false;
+document.f1.a32.hidden=document.f1.q32.hidden=document.f1.l32.hidden=document.f1.e32.hidden=true;
+document.f1.a42.hidden=document.f1.q42.hidden=document.f1.l42.hidden=document.f1.e42.hidden=true;
+document.f1.a52.hidden=document.f1.q52.hidden=document.f1.l52.hidden=document.f1.e52.hidden=true;
+document.f1.a62.hidden=document.f1.q62.hidden=document.f1.l62.hidden=document.f1.e62.hidden=true;
+document.f1.a72.hidden=document.f1.q72.hidden=document.f1.l72.hidden=document.f1.e72.hidden=true;
+document.f1.a82.hidden=document.f1.q82.hidden=document.f1.l82.hidden=document.f1.e82.hidden=true;
+document.f1.a92.hidden=document.f1.q92.hidden=document.f1.l92.hidden=document.f1.e92.hidden=true;
+document.f1.a102.hidden=document.f1.q102.hidden=document.f1.l102.hidden=document.f1.e102.hidden=true;
+document.f1.a112.hidden=document.f1.q112.hidden=document.f1.l112.hidden=document.f1.e112.hidden=true;
+document.f1.a122.hidden=document.f1.q122.hidden=document.f1.l122.hidden=document.f1.e122.hidden=true;
+document.f1.a132.hidden=document.f1.q132.hidden=document.f1.l132.hidden=document.f1.e132.hidden=true;
+document.f1.a142.hidden=document.f1.q142.hidden=document.f1.l142.hidden=document.f1.e142.hidden=true;
+document.f1.a152.hidden=document.f1.q152.hidden=document.f1.l152.hidden=document.f1.e152.hidden=true;
+document.f1.a162.hidden=document.f1.q162.hidden=document.f1.l162.hidden=document.f1.e162.hidden=true;
+             }
+             else if(n==4)
+             {
+                 document.f1.a120.hidden=document.f1.q120.hidden=document.f1.l120.hidden=document.f1.e120.hidden=false;
+document.f1.a22.hidden=document.f1.q22.hidden=document.f1.l22.hidden=document.f1.e22.hidden=false;
+document.f1.a32.hidden=document.f1.q32.hidden=document.f1.l32.hidden=document.f1.e32.hidden=false;
+document.f1.a42.hidden=document.f1.q42.hidden=document.f1.l42.hidden=document.f1.e42.hidden=false;
+document.f1.a52.hidden=document.f1.q52.hidden=document.f1.l52.hidden=document.f1.e52.hidden=true;
+document.f1.a62.hidden=document.f1.q62.hidden=document.f1.l62.hidden=document.f1.e62.hidden=true;
+document.f1.a72.hidden=document.f1.q72.hidden=document.f1.l72.hidden=document.f1.e72.hidden=true;
+document.f1.a82.hidden=document.f1.q82.hidden=document.f1.l82.hidden=document.f1.e82.hidden=true;
+document.f1.a92.hidden=document.f1.q92.hidden=document.f1.l92.hidden=document.f1.e92.hidden=true;
+document.f1.a102.hidden=document.f1.q102.hidden=document.f1.l102.hidden=document.f1.e102.hidden=true;
+document.f1.a112.hidden=document.f1.q112.hidden=document.f1.l112.hidden=document.f1.e112.hidden=true;
+document.f1.a122.hidden=document.f1.q122.hidden=document.f1.l122.hidden=document.f1.e122.hidden=true;
+document.f1.a132.hidden=document.f1.q132.hidden=document.f1.l132.hidden=document.f1.e132.hidden=true;
+document.f1.a142.hidden=document.f1.q142.hidden=document.f1.l142.hidden=document.f1.e142.hidden=true;
+document.f1.a152.hidden=document.f1.q152.hidden=document.f1.l152.hidden=document.f1.e152.hidden=true;
+document.f1.a162.hidden=document.f1.q162.hidden=document.f1.l162.hidden=document.f1.e162.hidden=true; 
+             }
+             else if(n==8)
+             {
+                 document.f1.a120.hidden=document.f1.q120.hidden=document.f1.l120.hidden=document.f1.e120.hidden=false;
+document.f1.a22.hidden=document.f1.q22.hidden=document.f1.l22.hidden=document.f1.e22.hidden=false;
+document.f1.a32.hidden=document.f1.q32.hidden=document.f1.l32.hidden=document.f1.e32.hidden=false;
+document.f1.a42.hidden=document.f1.q42.hidden=document.f1.l42.hidden=document.f1.e42.hidden=false;
+document.f1.a52.hidden=document.f1.q52.hidden=document.f1.l52.hidden=document.f1.e52.hidden=false;
+document.f1.a62.hidden=document.f1.q62.hidden=document.f1.l62.hidden=document.f1.e62.hidden=false;
+document.f1.a72.hidden=document.f1.q72.hidden=document.f1.l72.hidden=document.f1.e72.hidden=false;
+document.f1.a82.hidden=document.f1.q82.hidden=document.f1.l82.hidden=document.f1.e82.hidden=false;
+document.f1.a92.hidden=document.f1.q92.hidden=document.f1.l92.hidden=document.f1.e92.hidden=true;
+document.f1.a102.hidden=document.f1.q102.hidden=document.f1.l102.hidden=document.f1.e102.hidden=true;
+document.f1.a112.hidden=document.f1.q112.hidden=document.f1.l112.hidden=document.f1.e112.hidden=true;
+document.f1.a122.hidden=document.f1.q122.hidden=document.f1.l122.hidden=document.f1.e122.hidden=true;
+document.f1.a132.hidden=document.f1.q132.hidden=document.f1.l132.hidden=document.f1.e132.hidden=true;
+document.f1.a142.hidden=document.f1.q142.hidden=document.f1.l142.hidden=document.f1.e142.hidden=true;
+document.f1.a152.hidden=document.f1.q152.hidden=document.f1.l152.hidden=document.f1.e152.hidden=true;
+document.f1.a162.hidden=document.f1.q162.hidden=document.f1.l162.hidden=document.f1.e162.hidden=true; 
+             }
+             else if(n==16)
+             {
+                 document.f1.a120.hidden=document.f1.q120.hidden=document.f1.l120.hidden=document.f1.e120.hidden=false;
+document.f1.a22.hidden=document.f1.q22.hidden=document.f1.l22.hidden=document.f1.e22.hidden=false;
+document.f1.a32.hidden=document.f1.q32.hidden=document.f1.l32.hidden=document.f1.e32.hidden=false;
+document.f1.a42.hidden=document.f1.q42.hidden=document.f1.l42.hidden=document.f1.e42.hidden=false;
+document.f1.a52.hidden=document.f1.q52.hidden=document.f1.l52.hidden=document.f1.e52.hidden=false;
+document.f1.a62.hidden=document.f1.q62.hidden=document.f1.l62.hidden=document.f1.e62.hidden=false;
+document.f1.a72.hidden=document.f1.q72.hidden=document.f1.l72.hidden=document.f1.e72.hidden=false;
+document.f1.a82.hidden=document.f1.q82.hidden=document.f1.l82.hidden=document.f1.e82.hidden=false;
+document.f1.a92.hidden=document.f1.q92.hidden=document.f1.l92.hidden=document.f1.e92.hidden=false;
+document.f1.a102.hidden=document.f1.q102.hidden=document.f1.l102.hidden=document.f1.e102.hidden=false;
+document.f1.a112.hidden=document.f1.q112.hidden=document.f1.l112.hidden=document.f1.e112.hidden=false;
+document.f1.a122.hidden=document.f1.q122.hidden=document.f1.l122.hidden=document.f1.e122.hidden=false;
+document.f1.a132.hidden=document.f1.q132.hidden=document.f1.l132.hidden=document.f1.e132.hidden=false;
+document.f1.a142.hidden=document.f1.q142.hidden=document.f1.l142.hidden=document.f1.e142.hidden=false;
+document.f1.a152.hidden=document.f1.q152.hidden=document.f1.l152.hidden=document.f1.e152.hidden=false;
+document.f1.a162.hidden=document.f1.q162.hidden=document.f1.l162.hidden=document.f1.e162.hidden=false;
+             }
+             
+             else
+             {
+                 document.f1.a120.hidden=document.f1.q120.hidden=document.f1.l120.hidden=document.f1.e120.hidden=true;
+document.f1.a22.hidden=document.f1.q22.hidden=document.f1.l22.hidden=document.f1.e22.hidden=true;
+document.f1.a32.hidden=document.f1.q32.hidden=document.f1.l32.hidden=document.f1.e32.hidden=true;
+document.f1.a42.hidden=document.f1.q42.hidden=document.f1.l42.hidden=document.f1.e42.hidden=true;
+document.f1.a52.hidden=document.f1.q52.hidden=document.f1.l52.hidden=document.f1.e52.hidden=true;
+document.f1.a62.hidden=document.f1.q62.hidden=document.f1.l62.hidden=document.f1.e62.hidden=true;
+document.f1.a72.hidden=document.f1.q72.hidden=document.f1.l72.hidden=document.f1.e72.hidden=true;
+document.f1.a82.hidden=document.f1.q82.hidden=document.f1.l82.hidden=document.f1.e82.hidden=true;
+document.f1.a92.hidden=document.f1.q92.hidden=document.f1.l92.hidden=document.f1.e92.hidden=true;
+document.f1.a102.hidden=document.f1.q102.hidden=document.f1.l102.hidden=document.f1.e102.hidden=true;
+document.f1.a112.hidden=document.f1.q112.hidden=document.f1.l112.hidden=document.f1.e112.hidden=true;
+document.f1.a122.hidden=document.f1.q122.hidden=document.f1.l122.hidden=document.f1.e122.hidden=true;
+document.f1.a132.hidden=document.f1.q132.hidden=document.f1.l132.hidden=document.f1.e132.hidden=true;
+document.f1.a142.hidden=document.f1.q142.hidden=document.f1.l142.hidden=document.f1.e142.hidden=true;
+document.f1.a152.hidden=document.f1.q152.hidden=document.f1.l152.hidden=document.f1.e152.hidden=true;
+document.f1.a162.hidden=document.f1.q162.hidden=document.f1.l162.hidden=document.f1.e162.hidden=true;
+             }
+          }
+          function iteration2()
+          {
+              var n=document.f1.n.value;
+              var s=document.f1.s.value;
+              iteration1();
+              if(n=="2")
+              {
+                  if(document.f1.e1.value==s)
+                  {
+                      document.f1.a120.value=1;
+                      document.f1.a22.value=0;
+                      document.f1.result.color="green";
+                      document.f1.result.value="Result: Element Found";
+                      document.f1.result.hidden=false;
+                  }
+                  else if(document.f1.e2.value==s)
+                  {
+                      document.f1.a120.value=0;
+                      document.f1.a22.value=1;
+                      document.f1.result.color="green";
+                      document.f1.result.value="Result: Element Found";
+                      document.f1.result.hidden=false;
+                  }
+                  else
+                  {
+                      document.f1.a120.value=document.f1.a22.value="1/\u221A2";
+                      document.f1.result.color="red";
+                      document.f1.result.value="Result: Element Not Found";
+                      document.f1.result.hidden=false;
+                  }
+              }
+              else if(n==4)
+              {
+                  var i,loc=-1;
+                  var coeffs=["1/2","1/2","1/2","1/2"];
+                  for(i=0;i<n;i++)
+                  {
+                      if(elements[i]==s)
+                      {
+                          loc=i;
+                          document.f1.result.value="Result: Element Found";
+                          document.f1.result.hidden=false;
+                      }
+                  }
+                  
+                  if(loc!=-1)
+                  {
+                     for(i=0;i<n;i++)
+                      {
+                          coeffs[i]="0";
+                      } 
+                      coeffs[loc]="1";
+                  }
+                  else
+		{
+			document.f1.result.value="Result: Element Not Found";
+                          document.f1.result.hidden=false;
+		}
+                 setCoeffs(coeffs,n); 
+              }              
+              
+              else if(n==8)
+              {
+                  var i,loc=-1;
+                  var coeffs=["1/\u221A8","1/\u221A8","1/\u221A8","1/\u221A8","1/\u221A8","1/\u221A8","1/\u221A8","1/\u221A8"];
+                  document.f1.result.hidden=true;
+                  for(i=0;i<n;i++)
+                  {
+                      if(elements[i]==s)
+                      {
+                          loc=i;
+                      }
+                  }
+                  
+                  if(loc!=-1)
+                  {
+                     for(i=0;i<n;i++)
+                      {
+                          coeffs[i]="0.17";
+                      } 
+                      coeffs[loc]="0.88";
+                  }
+                 setCoeffs(coeffs,n); 
+              }              
+              
+              else if(n==16)
+              {
+                  var i,loc=-1;
+                  var coeffs=["1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4"];
+                  document.f1.result.hidden=true;
+                  for(i=0;i<n;i++)
+                  {
+                      if(elements[i]==s)
+                      {
+                          loc=i;
+                      }
+                  }
+                  
+                  if(loc!=-1)
+                  {
+                     for(i=0;i<n;i++)
+                      {
+                          coeffs[i]="0.18";
+                      } 
+                      coeffs[loc]="0.68";
+                  }
+                 setCoeffs(coeffs,n); 
+              }              
+              
+          }
+          
+          function iteration3()
+          {
+              var n=document.f1.n.value;
+              var s=document.f1.s.value;
+              iteration1();
+              
+              if(n==8)
+              {
+                  var i,loc=-1;
+                  var coeffs=["1/\u221A8","1/\u221A8","1/\u221A8","1/\u221A8","1/\u221A8","1/\u221A8","1/\u221A8","1/\u221A8"];
+                  document.f1.result.hidden=true;
+                  for(i=0;i<n;i++)
+                  {
+                      if(elements[i]==s)
+                      {
+                          loc=i;
+			  document.f1.result.value="Result: Element Found";
+                          document.f1.result.hidden=false;
+                      }
+                  }
+                  
+                  if(loc!=-1)
+                  {
+                     for(i=0;i<n;i++)
+                      {
+                          coeffs[i]="0";
+                      } 
+                      coeffs[loc]="1";
+                  }
+		else
+		{
+			document.f1.result.value="Result: Element Not Found";
+                          document.f1.result.hidden=false;
+		}
+                 setCoeffs(coeffs,n); 
+              }              
+              
+              else if(n==16)
+              {
+                  var i,loc=-1;
+                  var coeffs=["1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4"];
+                  document.f1.result.hidden=true;
+                  for(i=0;i<n;i++)
+                  {
+                      if(elements[i]==s)
+                      {
+                          loc=i;
+                      }
+                  }
+                  
+                  if(loc!=-1)
+                  {
+                     for(i=0;i<n;i++)
+                      {
+                          coeffs[i]="0.07";
+                      } 
+                      coeffs[loc]="0.95";
+                  }
+                 setCoeffs(coeffs,n); 
+              }              
+              
+          }
+          function iteration4()
+          {
+              var n=document.f1.n.value;
+              var s=document.f1.s.value;
+              iteration1();
+              
+              if(n==16)
+              {
+                  var i,loc=-1;
+                  var coeffs=["1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4","1/4"];
+                  document.f1.result.hidden=true;
+                  for(i=0;i<n;i++)
+                  {
+                      if(elements[i]==s)
+                      {
+                          loc=i;
+			  document.f1.result.value="Result: Element Found";
+                          document.f1.result.hidden=false;
+                      }
+                  }
+                  
+                  if(loc!=-1)
+                  {
+                     for(i=0;i<n;i++)
+                      {
+                          coeffs[i]="0";
+                      } 
+                      coeffs[loc]="1";
+                  }
+		else
+		{
+			document.f1.result.value="Result: Element Not Found";
+                          document.f1.result.hidden=false;
+		}
+                 setCoeffs(coeffs,n); 
+              }              
+              
+          }
+          
+          
+          
+          
+           function setCoeffs(coeffs,n)
+           {
+               if(n==4)
+               {
+                   document.f1.a120.value=coeffs[0];
+                   document.f1.a22.value=coeffs[1];
+                   document.f1.a32.value=coeffs[2];
+                   document.f1.a42.value=coeffs[3];
+               }
+               else if(n==8)
+               {
+                   document.f1.a120.value=coeffs[0];
+                   document.f1.a22.value=coeffs[1];
+                   document.f1.a32.value=coeffs[2];
+                   document.f1.a42.value=coeffs[3];
+                   document.f1.a52.value=coeffs[4];
+                   document.f1.a62.value=coeffs[5];
+                   document.f1.a72.value=coeffs[6];
+                   document.f1.a82.value=coeffs[7];
+               }
+               else if(n==16)
+               {
+                   document.f1.a120.value=coeffs[0];
+                   document.f1.a22.value=coeffs[1];
+                   document.f1.a32.value=coeffs[2];
+                   document.f1.a42.value=coeffs[3];
+                   document.f1.a52.value=coeffs[4];
+                   document.f1.a62.value=coeffs[5];
+                   document.f1.a72.value=coeffs[6];
+                   document.f1.a82.value=coeffs[7];
+                   document.f1.a92.value=coeffs[8];
+                   document.f1.a102.value=coeffs[9];
+                   document.f1.a112.value=coeffs[10];
+                   document.f1.a122.value=coeffs[11];
+                   document.f1.a132.value=coeffs[12];
+                   document.f1.a142.value=coeffs[13];
+                   document.f1.a152.value=coeffs[14];
+                   document.f1.a162.value=coeffs[15];
+               }
+           }
+         </script>
+         
+    </head>
+    <body><form name='f1'>
+           <table width="95%" align="center">
+            <tr>
+                <td width="80%">
+                    <font style="font-size:55px" color="green">Prachodayan<br></font><font style="font-size:30px" color="red"><i>Enlightening Minds</i></font>
+                </td>
+                <td align="right"><a href="index.html"><img src="home.jpeg" width="40%"></a></td>
+         
+        <br>
+        <table width="100%" border="1">
+            <tr></tr>
+        </table>
+        <br><br>
+        <table width="100%" align="center" border="1" cellpadding="20" bordercolor='black'>
+           
+            <tr>  
+                <td align="center">
+                    <a href="Courses.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Courses</b></font></a>
+                </td> 
+                <td align="center">
+                    <a href="Research.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Research</b></font></a>
+                </td>  <td align="center">
+                    <a href="AboutUs.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>About Us</b></font></a>
+                </td>
+               
+            </tr>
+        </table><br><br>
+        <table width='30%' border='0'>
+            <tr><td align='center' width='20%'>
+                <a href="QC_Home.html"><font color="black" style="font-size:14px"><img src="qc.png" width="60" height="60"><br>Quantum Computing</font></a>
+                </td></tr>
+        </table>
+        <br><br>
+        
+        <center><font style="font-size:3vw">Grover's Search Algorithm</font><br><br>
+            <center>
+                <select name="n" style="font-size: 20pt;text-align:center;color:blue;" onChange="draw()">
+                    <option value='nothing'>
+                        No: of elements
+                    </option>
+                    <option value="2">
+                         2 
+                    </option>
+                    <option value="4">
+                         4 
+                    </option>
+                    <option value="8">
+                         8 
+                    </option>
+                    <option value="16">
+                         16 
+                    </option>
+                    </select>
+                
+                <select name="s" style="font-size: 20pt;text-align:center;color:blue;" onChange="showbuttons()">
+                    <option value='nothing'>
+                        Search Element
+                    </option>
+                    <option value="a">
+                         a 
+                    </option>
+                    <option value="b">
+                         b 
+                    </option>
+                    <option value="c">
+                         c 
+                    </option>
+                    <option value="d">
+                         d 
+                    </option>
+                    <option value="e">
+                         e 
+                    </option>
+                    <option value="f">
+                         f 
+                    </option>
+                    <option value="g">
+                         g 
+                    </option>
+                    <option value="h">
+                         h 
+                    </option>
+                    <option value="i">
+                         i 
+                    </option>
+                    <option value="j">
+                         j 
+                    </option>
+                    <option value="k">
+                         k 
+                    </option>
+                    <option value="l">
+                         l 
+                    </option>
+                    <option value="m">
+                         m 
+                    </option>
+                    <option value="n">
+                         n 
+                    </option>
+                    <option value="o">
+                         o 
+                    </option>
+                    <option value="p">
+                         p 
+                    </option>
+                    </select>
+                
+                <br><br><br>
+                <input type="button" name="button1" value="Iteration1" hidden="true" onClick="iteration1()" style="width:200pt;font-size: 20pt;">
+                <input type="button" name="button2" value="Iteration2" hidden="true" onClick="iteration2()" style="width:200pt;font-size: 20pt;">
+                <input type="button" name="button3" value="Iteration3" hidden="true" onClick="iteration3()" style="width:200pt;font-size: 20pt;">
+                <input type="button" name="button4" value="Iteration4" hidden="true" onClick="iteration4()" style="width:200pt;font-size: 20pt;">
+                <br><br>
+                <input type="text" name="result" style="font-size: 20pt;text-align:center;width:300pt;border: 0pt;color:blue;" value="" hidden="true"  readonly>
+                <br><br>         
+            </center>
+            <br>
+            <table width="80%" cellpadding="0" cellspacing="0" align="center" border="1">
+                <tr><td width="50%">
+                <center><font style="font-size:22px;color:green;">Before Search</font></center>
+                        <table width='90%' border='0' align="center"><tr>
+                                <td align='left'><font style="font-size:20px;"><u>Addressing Qubits</u></font></td><td align='right'><font style="font-size:20px;"><u>Elements</u></font></td>
+                
+                
+                </tr></table>
+                    </td>
+                    <td width="50%">
+                        <center><font style="font-size:22px;color:green;">After Search</font></center>
+                        <table width='90%' border='0' align="center"><tr>
+                                <td align='left'><font style="font-size:20px;"><u>Addressing Qubits</u></font></td><td align='right'><font style="font-size:20px;"><u>Elements</u></font></td>
+                
+                
+                </tr></table>
+                    </td>
+                </tr>
+            </table>
+            <br>
+                        
+            <table width="80%" align="center" border="1" cellpadding='0' cellspacing='0'>
+                
+                <tr>
+                    <td width="50%" align="center">
+                        <input type="text" name="a1" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q1" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l1" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e1" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a2" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q2" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l2" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e2" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a3" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q3" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l3" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e3" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a4" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q4" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l4" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e4" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a5" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q5" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l5" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e5" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a6" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q6" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l6" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e6" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a7" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q7" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l7" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e7" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a8" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q8" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l8" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e8" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a9" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q9" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l9" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e9" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a10" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q10" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l10" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e10" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a11" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q11" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l11" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e11" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a12" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q12" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l12" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e12" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a13" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q13" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l13" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e13" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a14" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q14" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>                
+                        <input type="text" name="l14" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e14" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        <br>
+                        <input type="text" name="a15" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q15" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l15" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e15" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a16" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;border: 0pt;" value="" hidden="true" readonly>
+                        <input type="text" name="q16" style="font-size: 20pt;text-align:center;width:75pt;" value="" hidden="true" readonly>
+                        <input type="text" name="l16" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e16" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                    </td>
+                    <td width="50%" align="center">
+                        
+                        <input type="text" name="a120" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q120" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l120" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e120" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a22" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q22" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l22" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e22" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a32" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q32" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l32" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e32" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a42" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q42" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l42" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e42" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a52" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q52" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l52" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e52" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a62" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q62" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l62" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e62" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a72" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q72" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l72" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e72" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a82" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q82" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l82" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e82" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a92" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q92" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l92" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e92" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a102" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q102" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l102" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e102" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a112" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q112" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l112" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e112" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a122" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q122" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l122" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e122" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a132" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q132" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l132" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e132" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a142" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q142" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>                
+                        <input type="text" name="l142" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e142" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        <br>
+                        <input type="text" name="a152" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="q152" style="font-size: 20pt;text-align:center;width:75pt;" value=" " hidden="true"  readonly>
+                        <input type="text" name="l152" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e152" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                        <input type="text" name="a162" style="font-size: 20pt;text-align:center;width:75pt;color: red;border: 0pt;border: 0pt;" value="" hidden="true" readonly>
+                        <input type="text" name="q162" style="font-size: 20pt;text-align:center;width:75pt;" value="" hidden="true" readonly>
+                        <input type="text" name="l162" style="font-size: 20pt;text-align:center;width:120pt;border: 0pt;border: 0pt;" value="---------->" hidden="true" readonly>
+                        <input type="text" name="e162" style="font-size: 20pt;text-align:center;width:75pt;color: green;" value="" hidden="true" readonly>
+                        
+                        <br>
+                    </td>
+                </tr>
+                
+            </table>    
+            
+            </form>      
+    </body>
+</html>

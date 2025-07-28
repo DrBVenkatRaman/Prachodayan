@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title>Prachodayan</title>
+         <script language="javascript">
+             function draw()
+             {
+                 var val=document.form1.fx.value;
+                 if(val=="0"){
+                     document.form1.a1.value="0";
+                     document.form1.a2.value="1";
+                     document.form1.a3.value="0";
+                     document.form1.a4.value="1";
+                     document.form1.i1.value=document.form1.i2.value=document.form1.i3.value=document.form1.i4.value="|0>"
+                 }
+                 else if(val=="1")
+                     {
+                     document.form1.a1.value="1";
+                     document.form1.a2.value="0";
+                     document.form1.a3.value="-1";
+                     document.form1.a4.value="-0";
+                     document.form1.i1.value=document.form1.i2.value=document.form1.i3.value=document.form1.i4.value="|1>"
+                 }
+                 else
+                     {
+                     document.form1.a1.value="-";
+                     document.form1.a2.value="-";
+                     document.form1.a3.value="-";
+                     document.form1.a4.value="-";
+                     document.form1.i1.value=document.form1.i2.value=document.form1.i3.value=document.form1.i4.value="-"
+                 }
+                 
+             }
+             </script>
+             
+    </head>
+    <body>
+       
+        <form name="form1">
+           <table width="95%" align="center">
+            <tr>
+                <td width="80%">
+                    <font style="font-size:55px" color="green">Prachodayan<br></font><font style="font-size:30px" color="red"><i>Enlightening Minds</i></font>
+                </td>
+                <td align="right"><a href="index.html"><img src="home.jpeg" width="40%"></a></td>
+         
+        <br>
+        <table width="100%" border="1">
+            <tr></tr>
+        </table>
+        <br><br>
+        <table width="100%" align="center" border="1" cellpadding="20" bordercolor='black'>
+           
+            <tr>  
+                <td align="center">
+                    <a href="Courses.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Courses</b></font></a>
+                </td> 
+                <td align="center">
+                    <a href="Research.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Research</b></font></a>
+                </td>  <td align="center">
+                    <a href="AboutUs.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>About Us</b></font></a>
+                </td>
+               
+            </tr>
+        </table><br><br>
+        <table width='30%' border='0'>
+            <tr><td align='center' width='20%'>
+                <a href="QC_Home.html"><font color="black" style="font-size:14px"><img src="qc.png" width="60" height="60"><br>Quantum Computing</font></a>
+                </td></tr>
+        </table>
+        <br><br>
+      
+        
+        <center><font style="font-size:3vw">Quantum Teleportation</font><br><br>
+        <br>
+        
+        <table width="90%" align="center" border="0" cellpadding="0" cellspacing="0">  
+            <tr>
+                <td align="center">
+                    <table border="0" align="right"><tr><td>
+                                <br><br><br> <br><br><br> <br><br><br><br>
+                                
+                                <table border='0'><tr><td align="right"><br>
+                                <select name="fx" style="font-size: 20pt;text-align:center;color:blue;" onChange="draw()">
+                    <option>
+                        Select Qubit
+                    </option>
+                    <option value="0">
+                        | 0 >
+                    </option>
+                    <option value="1">
+                        | 1 >
+                    </option>
+                                </select><br><br><br><br>
+                                        </td></tr>
+                                    <tr><td rowspan="2" align="right"><font style="font-size:26px;"><b>(|00> + |11>) /&radic;2 </b></font><font style="font-size:80px;"><b> { </b></font></td></tr>
+                                </table>
+                                            
+                            </td>
+                            <td>
+                                <br><br><br><br><br><br> <br><br><br><br>
+                    <canvas id="myCanvas" width="400" height="300" style="border:0px solid #000000;">
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+                                <script>
+                                    var c3 = document.getElementById("myCanvas");
+                        var ctx3 = c3.getContext("2d");
+                        ctx3.beginPath();                        
+                        ctx3.arc(150, 80, 5, 0, 2 * Math.PI);
+                        ctx3.fillStyle = "black";
+                        ctx3.fill(); 
+                        ctx3.closePath();
+                        ctx3.beginPath();
+                        ctx3.arc(150, 180, 10, 0, 2 * Math.PI);
+                        ctx3.rect(75, 25, 250, 250);
+                        ctx3.rect(220, 55, 50, 50);
+                        ctx3.font = 'normal 28px sans-serif';
+                        ctx3.fillText("H", 235, 90, 40)
+                        ctx3.moveTo(0, 80);
+                        ctx3.lineTo(220, 80);
+                        ctx3.moveTo(0, 180);
+                        ctx3.lineTo(400, 180);
+                        ctx3.moveTo(0, 250);
+                        ctx3.lineTo(350, 250);
+                        ctx3.moveTo(150, 80);
+                        ctx3.lineTo(150, 190);
+                        ctx3.moveTo(270, 80);
+                        ctx3.lineTo(350, 80);
+                        ctx3.moveTo(270, 80);
+                        ctx3.lineTo(350, 80);
+                        ctx3.moveTo(350, 80);
+                        ctx3.lineTo(350, 250);
+                        ctx3.font = 'normal 28px sans-serif';
+                        ctx3.fillText(">", 385, 190, 20)
+                        
+                        ctx3.stroke();
+                                    </script>
+                            </td>
+                            
+                           
+                
+                
+            </tr>
+            
+        </table>
+                 <td align="left">
+                     
+                     <table border="0">
+                         <tr><td align="left">
+                     
+                         <center><font style="font-size:28px;color:green;">Qubit Received</font></center><br><br>
+                                 <table border="0" width="100%"><tr>
+                    <td align="center" width="25%"><input type="text" name="i1" style="font-size: 20pt;text-align:center;width:30pt;color: red;" value="-" readonly>
+                    &nbsp;&nbsp;&nbsp;</td><td align="center" width="25%"><input type="text" name="i2" style="font-size: 20pt;text-align:center;width:30pt;color: red;" value="-" readonly>
+                    </td><td align="center" width="25%">&nbsp;&nbsp;&nbsp;<input type="text" name="i3" style="font-size: 20pt;text-align:center;width:30pt;color: red;" value="-" readonly>
+                    </td><td align="center" width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="i4" style="font-size: 20pt;text-align:center;width:30pt;color: red;" value="-" readonly>
+                    </td></tr></table>
+                    
+                             </td></tr>
+                         <tr><td><canvas id="myCanvas2" width="450" height="100" style="border:2px solid #000000;">
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+                                 <script>
+                                     var c3 = document.getElementById("myCanvas2");
+                        var ctx3 = c3.getContext("2d");
+                        ctx3.beginPath();                                         
+                        
+                        ctx3.font = 'normal 28px sans-serif';
+                        
+                        ctx3.moveTo(50, 0);
+                        ctx3.lineTo(50, 100);                        
+                        ctx3.fillText("^", 43, 20, 30)
+                        ctx3.moveTo(170, 0);
+                        ctx3.lineTo(170, 30);
+                        ctx3.moveTo(170, 70);
+                        ctx3.lineTo(170, 100);
+                        ctx3.fillText("^", 163, 20, 30);
+                        ctx3.rect(150, 30, 40, 40);
+                        ctx3.fillText("X", 162, 60, 30)
+                        
+                        
+                        ctx3.moveTo(290, 0);
+                        ctx3.lineTo(290, 30);
+                        ctx3.moveTo(290, 70);
+                        ctx3.lineTo(290, 100);
+                        ctx3.fillText("^", 283, 20, 30);
+                        ctx3.rect(270, 30, 40, 40);
+                        ctx3.fillText("Z", 282, 60, 30)
+                        
+                        ctx3.moveTo(410, 0);
+                        ctx3.lineTo(410, 10);
+                        ctx3.moveTo(410, 90);
+                        ctx3.lineTo(410, 100);
+                        ctx3.fillText("^", 403, 20, 30);
+                        ctx3.rect(390, 10, 40, 40);
+                        ctx3.rect(390, 50, 40, 40);
+                        ctx3.fillText("Z", 402, 40, 30);
+                        ctx3.fillText("X", 402, 80, 30);
+                             ctx3.stroke();
+                             </script></td></tr>
+                         <tr><td align="left">
+                     
+                    <font style="font-size: 20pt;text-align:center;">|00<input type="text" name="a1" style="font-size: 20pt;text-align:center;width:30pt;color: red;" value="-" readonly>> + </font>
+                    <font style="font-size: 20pt;text-align:center;">|01<input type="text" name="a2" style="font-size: 20pt;text-align:center;width:30pt;color: red;" value="-" readonly>> + </font>
+                    <font style="font-size: 20pt;text-align:center;">|10<input type="text" name="a3" style="font-size: 20pt;text-align:center;width:30pt;color: red;" value="-" readonly>> + </font>
+                    <font style="font-size: 20pt;text-align:center;">|11<input type="text" name="a4" style="font-size: 20pt;text-align:center;width:30pt;color: red;" value="-" readonly>></font>
+                    
+                    
+                             </td></tr></table>
+                    
+                </td>
+                
+                
+                </td></tr></table>
+        
+        
+        
+        
+        </form></body></html>
