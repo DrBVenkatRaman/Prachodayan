@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prachodayan Software Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: white;
+      color: Green;
+    }
+    nav {
+      background-color: grey;
+      padding: 1rem;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .nav-logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #fff;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: "dark grey";
+        width: 100%;
+        padding: 1rem;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 2rem 0;
+    }
+    .swiper {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+	position: relative;
+	padding-bottom: 50px;
+    }
+    .swiper-slide {
+      position: relative;
+    }
+    .swiper-slide img {
+      width: 100%;
+      display: block;
+    }
+    .swiper-button-next, .swiper-button-prev {
+  top: 190%; /* Adjust vertical position */
+  width: 80px;
+  height: 50px;
+  color: black;
+}
+
+ 
+
+    .caption {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    #topBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #1e3a8a;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 12px 16px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    #topBtn:hover {
+      background-color: #3b5998;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+    
+      <div class="nav-logo"></div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        
+       
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#aboutus">About Us</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+	 <button id="topBtn" onclick="scrollToTop()" title="Go to top">↑</button>
+  <h1>Prachodayan</h1><center><i><font color=red>Enlightening Minds</font></i><br><br><br>
+  <img src="images/logo.png" alt="Prachodayan" width="30%"></center><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="services">
+<section id="about" style="padding: 3rem 1rem; background-color: #f9fafb;">
+  
+<h2 style="text-align: center; font-size: 2rem; color: #1e3a8a; margin-bottom: 1.5rem;">Our Services</h2>
+
+  <div class="swiper">
+<div class="swiper-pagination"></div>
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <a href="https://prachodayan.com/q-labs" target="_blank">
+          <img src="images/course.png" alt="Q-Labs">
+          <div class="caption">Technology Training in Quantum Computing</div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://prachodayan.com/internships" target="_blank">
+          <img src="images/internships2.png" alt="Apply Internships">
+          <div class="caption">Apply for Internships</div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://prachodayan.com/journals" target="_blank">
+          <img src="images/journals.png" alt="Publish in our Journals">
+          <div class="caption">Publish in our Journals</div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://prachodayan.com/research-guidance" target="_blank">
+          <img src="images/research2.png" alt="Research Guidance">
+          <div class="caption">Seek Research Guidance from Experts</div>
+        </a>
+      </div>
+    </div>
+    </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('active');
+    }
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div id="aboutus">
+  <section id="about" style="padding: 3rem 1rem; background-color: #f9fafb;">
+  <div style="max-width: 900px; margin: auto;">
+    <h2 style="text-align: center; font-size: 2rem; color: #1e3a8a; margin-bottom: 1.5rem;">About Us</h2>
+    <p style="font-size: 1.1rem; line-height: 1.8; color: #333;">
+      <strong>Prachodayan Software Solutions (OPC) Pvt. Ltd.</strong> is a cutting-edge organization focused on the convergence of 
+      <strong>Quantum Computing</strong> and <strong>Artificial Intelligence</strong>. We are dedicated to fostering innovation through 
+      advanced <strong>training</strong>, <strong>technology development</strong>, and <strong>research</strong> initiatives that empower students, 
+      researchers, and institutions.
+    </p>
+    <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-top: 1rem;">
+      At Prachodayan, we believe in unlocking the potential of emerging technologies to solve real-world problems. Our expert-led 
+      programs are designed to bridge the gap between academia and industry by offering:
+    </p>
+    <ul style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-left: 1.5rem;">
+      <li>Hands-on internships</li>
+      <li>Research guidance and mentorship</li>
+      <li>Opportunities to publish in reputed scientific journals</li>
+      <li>Access to collaborative labs and development platforms</li>
+    </ul>
+    <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-top: 1rem;">
+      With a strong vision to be a leader in Quantum-AI advancement, we aim to build a vibrant community of innovators and thinkers 
+      driving the future of science and technology.
+    </p>
+  </div>
+</section>
+
+  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div id="contact">
+<section id="about" style="padding: 3rem 1rem; background-color: #f9fafb;">
+  
+<h2 style="text-align: center; font-size: 2rem; color: #1e3a8a; margin-bottom: 1.5rem;">Contact Us</h2><br><br>
+  <table align=center width=80% border=0><tr><td><font style="font-size:20px" color=black><b>Office Address</b></br>H No 4-214/4, <br>Opp Kamma Sangham,<br>Panchayati Raj Road, <br>Basar, <br>Telangana, India, <br>PIN: 504101<br><br><b>Mobile:</b> 8555941466<br><b>e-mail:</b> prachodayan.research@gmail.com</font></td><td>
+  <table align=right border=1><tr><td>
+  <!-- Replace the src URL with your desired location -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.3235089386053!2d77.94770727443073!3d18.872724082290482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bce0baef1eec2e1%3A0x1ea0189c2c881587!2sPrachodayan%20Software%20Solutions%20(OPC)%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1753665087043!5m2!1sen!2sin" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</td></tr></table>
+</td></tr></table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>  </div>
+
+
+</body>
+</html>
+
