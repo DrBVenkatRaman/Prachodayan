@@ -247,12 +247,69 @@
 <section id="about" style="padding: 3rem 1rem; background-color: #f9fafb;">
   
 <h2 style="text-align: center; font-size: 2rem; color: #1e3a8a; margin-bottom: 1.5rem;">Contact Us</h2><br><br>
-  <table align=center width=80% border=0><tr><td><font style="font-size:20px" color=black><b>Office Address</b></br>H No 4-214/4, <br>Opp Kamma Sangham,<br>Panchayati Raj Road, <br>Basar, <br>Telangana, India, <br>PIN: 504101<br><br><b>Mobile:</b> 8555941466<br><b>e-mail:</b> prachodayan.research@gmail.com</font></td><td>
-  <table align=right border=1><tr><td>
-  <!-- Replace the src URL with your desired location -->
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.3235089386053!2d77.94770727443073!3d18.872724082290482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bce0baef1eec2e1%3A0x1ea0189c2c881587!2sPrachodayan%20Software%20Solutions%20(OPC)%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1753665087043!5m2!1sen!2sin" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</td></tr></table>
-</td></tr></table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .text-content {
+      flex: 1 1 300px;
+      padding: 1rem;
+    }
+
+    .map-wrapper {
+      flex: 1 1 300px;
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .map-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* On small screens stack vertically */
+    @media (max-width: 768px) {
+      .container { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text-content">
+      <h2>Office Address</h2>
+      <p>
+        H No 4‑214/4,<br />
+        Opp Kamma Sangham,<br />
+        Panchayati Raj Road,<br />
+        Basar,<br />
+        Telangana, India,<br />
+        PIN: 504101
+      </p>
+      <p>
+        <strong>Mobile:</strong> 8555941466<br />
+        <strong>Email:</strong> prachodayan.research@gmail.com
+      </p>
+    </div>
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.323394602147!2d77.94770727596223!3d18.87272915832095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bce0baef1eec2e1%3A0x1ea0189c2c881587!2sPrachodayan%20Software%20Solutions%20(OPC)%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1753764592385!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
 </section>  </div>
 
 
