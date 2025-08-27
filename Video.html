@@ -10,7 +10,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      min-height: 50vh;
       background: #111;
     }
 
@@ -99,21 +99,33 @@
       muteBtn.textContent = video.muted ? "🔇" : "🔊";
     });
 
-    // Fullscreen toggle (fixed)
-    fullscreenBtn.addEventListener("click", () => {
-      if (isIOS && video.webkitEnterFullscreen) {
-        // iOS Safari only supports fullscreen on <video>
-        video.webkitEnterFullscreen();
-      } else if (document.fullscreenElement || document.webkitFullscreenElement) {
-        // Exit fullscreen
-        if (document.exitFullscreen) document.exitFullscreen();
-        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-      } else {
-        // Enter fullscreen on container (includes custom buttons)
-        if (videoContainer.requestFullscreen) videoContainer.requestFullscreen();
-        else if (videoContainer.webkitRequestFullscreen) videoContainer.webkitRequestFullscreen();
+    // Fullscreen toggle (with orientation fix)
+fullscreenBtn.addEventListener("click", async () => {
+  if (isIOS && video.webkitEnterFullscreen) {
+    // iOS Safari only supports fullscreen on <video>
+    video.webkitEnterFullscreen();
+  } else if (document.fullscreenElement || document.webkitFullscreenElement) {
+    // Exit fullscreen
+    if (document.exitFullscreen) document.exitFullscreen();
+    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+  } else {
+    // Enter fullscreen on container (includes custom buttons)
+    if (videoContainer.requestFullscreen) {
+      await videoContainer.requestFullscreen();
+    } else if (videoContainer.webkitRequestFullscreen) {
+      await videoContainer.webkitRequestFullscreen();
+    }
+
+    // Try to lock screen orientation to landscape
+    if (screen.orientation && screen.orientation.lock) {
+      try {
+        await screen.orientation.lock("landscape");
+      } catch (err) {
+        console.log("Orientation lock not supported:", err);
       }
-    });
+    }
+  }
+});
 
     // Disable right click
     document.addEventListener("contextmenu", e => e.preventDefault());
