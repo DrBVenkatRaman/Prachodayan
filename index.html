@@ -248,8 +248,8 @@
     </video>
   
 <button class="mute-btn" id="muteBtn">🔇</button>
-  
-	
+  <button class="play-btn" id="playBtn">▶️</button>
+	<button class="control-btn" id="fullscreenBtn">⛶</button>
   <script>
     const video = document.getElementById("myVideo");
     const muteBtn = document.getElementById("muteBtn");
@@ -263,7 +263,32 @@
         muteBtn.textContent = "🔇";
       }
     });
-  
+
+	  
+  const playBtn = document.getElementById("playBtn");
+
+playBtn.addEventListener("click", () => {
+  if (video.paused) {
+    video.play();
+    playBtn.textContent = "⏸️";
+  } else {
+    video.pause();
+    playBtn.textContent = "▶️";
+  }
+});
+
+
+fullscreenBtn.addEventListener("click", () => {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) { // Safari
+        video.webkitRequestFullscreen();
+      } else if (video.msRequestFullscreen) { // IE/Edge
+        video.msRequestFullscreen();
+      }
+    });
+
+	  
     // Disable right click on whole page
     document.addEventListener("contextmenu", e => e.preventDefault());
   </script>
