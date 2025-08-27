@@ -154,7 +154,20 @@
       pointer-events: none; /* disables right click, download, etc */
     }
   
-
+/* Custom mute/unmute button */
+    .mute-btn {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+	}
 	  
   </style>
 </head>
@@ -328,8 +341,23 @@
       Your browser does not support the video tag.
     </video>
   </div>
+<button class="mute-btn" id="muteBtn">🔇</button>
+  </div>
 
   <script>
+    const video = document.getElementById("myVideo");
+    const muteBtn = document.getElementById("muteBtn");
+
+    muteBtn.addEventListener("click", () => {
+      if (video.muted) {
+        video.muted = false;
+        muteBtn.textContent = "🔊";
+      } else {
+        video.muted = true;
+        muteBtn.textContent = "🔇";
+      }
+    });
+  
     // Disable right click on whole page
     document.addEventListener("contextmenu", e => e.preventDefault());
   </script>
