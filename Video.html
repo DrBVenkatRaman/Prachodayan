@@ -10,7 +10,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 50vh;
+      min-height: 30vh;
       background: #111;
     }
 
@@ -21,6 +21,7 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      background: black;
     }
 
     video {
@@ -30,13 +31,16 @@
 
     .controls {
       position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 0;
+      left: 0;
+      width: 100%;
       display: flex;
+      align-items: center;
       gap: 10px;
-      opacity: 0;
+      padding: 8px;
+      background: rgba(0,0,0,0.6);
       transition: opacity 0.3s ease;
+      opacity: 0;
     }
 
     /* Show controls when hover or fullscreen */
@@ -47,13 +51,38 @@
     }
 
     .control-btn {
-      background: rgba(0,0,0,0.6);
+      background: none;
       color: white;
       border: none;
-      border-radius: 8px;
-      padding: 10px 14px;
-      font-size: 16px;
+      font-size: 18px;
       cursor: pointer;
+      padding: 5px;
+    }
+
+    input[type="range"] {
+      appearance: none;
+      height: 5px;
+      border-radius: 5px;
+      background: #444;
+      outline: none;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: white;
+      cursor: pointer;
+    }
+
+    .progress-bar {
+      flex-grow: 1;
+    }
+
+    .volume-slider {
+      width: 80px;
     }
   </style>
 </head>
@@ -66,7 +95,9 @@
 
       <div class="controls">
         <button class="control-btn" id="playBtn">▶️</button>
+        <input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0">
         <button class="control-btn" id="muteBtn">🔇</button>
+        <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.05" value="1">
         <button class="control-btn" id="fullscreenBtn">⛶</button>
       </div>
     </div>
@@ -77,9 +108,10 @@
     const playBtn = document.getElementById("playBtn");
     const muteBtn = document.getElementById("muteBtn");
     const fullscreenBtn = document.getElementById("fullscreenBtn");
+    const progressBar = document.getElementById("progressBar");
+    const volumeSlider = document.getElementById("volumeSlider");
     const videoContainer = document.getElementById("videoContainer");
 
-    // Detect iOS Safari
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     // Play / Pause
@@ -93,39 +125,51 @@
       }
     });
 
+    // Update progress bar
+    video.addEventListener("timeupdate", () => {
+      progressBar.value = (video.currentTime / video.duration) * 100;
+    });
+
+    // Seek video
+    progressBar.addEventListener("input", () => {
+      video.currentTime = (progressBar.value / 100) * video.duration;
+    });
+
     // Mute / Unmute
     muteBtn.addEventListener("click", () => {
       video.muted = !video.muted;
       muteBtn.textContent = video.muted ? "🔇" : "🔊";
     });
 
-    // Fullscreen toggle (with orientation fix)
-fullscreenBtn.addEventListener("click", async () => {
-  if (isIOS && video.webkitEnterFullscreen) {
-    // iOS Safari only supports fullscreen on <video>
-    video.webkitEnterFullscreen();
-  } else if (document.fullscreenElement || document.webkitFullscreenElement) {
-    // Exit fullscreen
-    if (document.exitFullscreen) document.exitFullscreen();
-    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-  } else {
-    // Enter fullscreen on container (includes custom buttons)
-    if (videoContainer.requestFullscreen) {
-      await videoContainer.requestFullscreen();
-    } else if (videoContainer.webkitRequestFullscreen) {
-      await videoContainer.webkitRequestFullscreen();
-    }
+    // Volume control
+    volumeSlider.addEventListener("input", () => {
+      video.volume = volumeSlider.value;
+      video.muted = volumeSlider.value == 0;
+      muteBtn.textContent = video.muted ? "🔇" : "🔊";
+    });
 
-    // Try to lock screen orientation to landscape
-    if (screen.orientation && screen.orientation.lock) {
-      try {
-        await screen.orientation.lock("landscape");
-      } catch (err) {
-        console.log("Orientation lock not supported:", err);
+    // Fullscreen toggle
+    fullscreenBtn.addEventListener("click", async () => {
+      if (isIOS && video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      } else if (document.fullscreenElement || document.webkitFullscreenElement) {
+        if (document.exitFullscreen) document.exitFullscreen();
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        fullscreenBtn.textContent = "⛶"; // back to enter icon
+      } else {
+        if (videoContainer.requestFullscreen) await videoContainer.requestFullscreen();
+        else if (videoContainer.webkitRequestFullscreen) await videoContainer.webkitRequestFullscreen();
+
+        if (screen.orientation && screen.orientation.lock) {
+          try {
+            await screen.orientation.lock("landscape");
+          } catch (err) {
+            console.log("Orientation lock not supported:", err);
+          }
+        }
+        fullscreenBtn.textContent = "❌"; // exit icon
       }
-    }
-  }
-});
+    });
 
     // Disable right click
     document.addEventListener("contextmenu", e => e.preventDefault());
