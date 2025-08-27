@@ -129,58 +129,45 @@
     }
 
  .players {
+  #players {
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      
+      min-height: 27vh;
       background: #111;
     }
 
     .video-container {
       position: relative;
-      width: 95%;
+      width: 90%;
       max-width: 900px;
-      
-      overflow: hidden;
       border-radius: 12px;
+      overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      background: black;
     }
 
     video {
       width: 100%;
-      height: auto;
-      object-fit: cover;
-      pointer-events: none; /* disables right click, download, etc */
+      display: block;
     }
-  
-/* Custom mute/unmute button */
-    .mute-btn {
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
-      cursor: pointer;
-	}
-	  /* Controls container */
+
     .controls {
       position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 10px;
+      left: 0;
+      width: 100%;
       display: flex;
+      align-items: center;
       gap: 10px;
+      padding: 8px;
+      background: rgba(0,0,0,0.5);
       opacity: 0;
       transition: opacity 0.3s ease;
     }
 
-    /* Show controls when hover or fullscreen */
+    /* Show controls on hover or fullscreen */
     .video-container:hover .controls,
     .video-container:fullscreen .controls,
     .video-container:-webkit-full-screen .controls {
@@ -188,13 +175,31 @@
     }
 
     .control-btn {
-      background: rgba(0,0,0,0.6);
+      background: transparent;
       color: white;
       border: none;
-      border-radius: 8px;
-      padding: 10px 14px;
-      font-size: 16px;
+      font-size: 20px;
       cursor: pointer;
+    }
+
+    .progress {
+      flex: 1;
+      height: 6px;
+      background: #444;
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .progress-filled {
+      width: 0%;
+      height: 100%;
+      background: red;
+      border-radius: 3px;
+    }
+
+    .volume-slider {
+      width: 80px;
 	}
   </style>
 </head>
@@ -266,29 +271,43 @@
 	</style>
 	<br><br><br><br><br><br>
 	
+	<div id="players">
+    <div class="video-container" id="videoContainer">
+      <video id="myVideo" loop playsinline controlslist="nodownload">
+        <source src="advertisement2.mp4" type="video/mp4" />
+      </video>
+
+      <div class="controls">
+        <button class="control-btn" id="playBtn">▶️</button>
+        
+        <div class="progress" id="progress">
+          <div class="progress-filled" id="progressFilled"></div>
+        </div>
+        
+        <button class="control-btn" id="muteBtn">🔊</button>
+        <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.05" value="1">
+
+        <button class="control-btn" id="fullscreenBtn">⛶</button>
+      </div>
+    </div>
+  </div>
 	
-	<div class = "players">
-  <div class="video-container">
-    <video id="myVideo" muted loop playsinline controlslist="nodownload">
-      <source src="advertisement2.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  
-<!-- Custom controls -->
-    <div class="controls">
-      <button class="control-btn" id="playBtn">▶️</button>
-      <button class="control-btn" id="muteBtn">🔇</button>
-      <button class="control-btn" id="fullscreenBtn">⛶</button>
-    </div></div>
+    
   
 		<script>
 
-	  const video = document.getElementById("myVideo");
+    const video = document.getElementById("myVideo");
     const playBtn = document.getElementById("playBtn");
     const muteBtn = document.getElementById("muteBtn");
+    const volumeSlider = document.getElementById("volumeSlider");
     const fullscreenBtn = document.getElementById("fullscreenBtn");
     const videoContainer = document.getElementById("videoContainer");
-const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const progress = document.getElementById("progress");
+    const progressFilled = document.getElementById("progressFilled");
+
+    // Detect iOS Safari
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
     // Play / Pause
     playBtn.addEventListener("click", () => {
       if (video.paused) {
@@ -300,46 +319,65 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
       }
     });
 
+    // Update play button when video ends
+    video.addEventListener("ended", () => {
+      playBtn.textContent = "▶️";
+    });
+
     // Mute / Unmute
     muteBtn.addEventListener("click", () => {
-      if (video.muted) {
-        video.muted = false;
-        muteBtn.textContent = "🔊";
-      } else {
-        video.muted = true;
-        muteBtn.textContent = "🔇";
-      }
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? "🔇" : "🔊";
+    });
+
+    // Volume slider
+    volumeSlider.addEventListener("input", () => {
+      video.volume = volumeSlider.value;
+      video.muted = volumeSlider.value == 0;
+      muteBtn.textContent = video.muted ? "🔇" : "🔊";
+    });
+
+    // Progress bar update
+    video.addEventListener("timeupdate", () => {
+      const percent = (video.currentTime / video.duration) * 100;
+      progressFilled.style.width = percent + "%";
+    });
+
+    // Seek in progress bar
+    progress.addEventListener("click", (e) => {
+      const rect = progress.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const percent = clickX / rect.width;
+      video.currentTime = percent * video.duration;
     });
 
     // Fullscreen toggle
-    fullscreenBtn.addEventListener("click", () => {
-      if (isIOS) {
-        // iOS Safari: only video can go fullscreen
-        video.webkitEnterFullscreen && video.webkitEnterFullscreen();
-        return;
-      }
-
-      if (
-        document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.msFullscreenElement
-      ) {
-        // Exit fullscreen
+    fullscreenBtn.addEventListener("click", async () => {
+      if (isIOS && video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      } else if (document.fullscreenElement || document.webkitFullscreenElement) {
         if (document.exitFullscreen) document.exitFullscreen();
         else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-        else if (document.msExitFullscreen) document.msExitFullscreen();
+        fullscreenBtn.textContent = "⛶";
       } else {
-        // Enter fullscreen on container (includes controls)
-        if (videoContainer.requestFullscreen) videoContainer.requestFullscreen();
-        else if (videoContainer.webkitRequestFullscreen) videoContainer.webkitRequestFullscreen();
-        else if (videoContainer.msRequestFullscreen) videoContainer.msRequestFullscreen();
+        if (videoContainer.requestFullscreen) {
+          await videoContainer.requestFullscreen();
+        } else if (videoContainer.webkitRequestFullscreen) {
+          await videoContainer.webkitRequestFullscreen();
+        }
+        fullscreenBtn.textContent = "❌";
+        if (screen.orientation && screen.orientation.lock) {
+          try {
+            await screen.orientation.lock("landscape");
+          } catch {}
+        }
       }
     });
 
-
-    // Disable right click on whole page
+    // Disable right click
     document.addEventListener("contextmenu", e => e.preventDefault());
-  </script>
+  
+	  </script>
 
 	</div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
