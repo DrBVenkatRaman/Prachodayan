@@ -168,7 +168,33 @@
       font-size: 20px;
       cursor: pointer;
 	}
-	  
+	  /* Controls container */
+    .controls {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Show controls on hover */
+    .video-container:hover .controls,
+    .video-container:fullscreen .controls {
+      opacity: 1;
+    }
+
+    .control-btn {
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 16px;
+      cursor: pointer;
+	}
   </style>
 </head>
 <body>
@@ -251,9 +277,25 @@
   <button class="play-btn" id="playBtn">▶️</button>
 	<button class="control-btn" id="fullscreenBtn">⛶</button>
   <script>
-    const video = document.getElementById("myVideo");
-    const muteBtn = document.getElementById("muteBtn");
 
+	  const video = document.getElementById("myVideo");
+    const playBtn = document.getElementById("playBtn");
+    const muteBtn = document.getElementById("muteBtn");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
+    const videoContainer = document.getElementById("videoContainer");
+
+    // Play / Pause
+    playBtn.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+        playBtn.textContent = "⏸️";
+      } else {
+        video.pause();
+        playBtn.textContent = "▶️";
+      }
+    });
+
+    // Mute / Unmute
     muteBtn.addEventListener("click", () => {
       if (video.muted) {
         video.muted = false;
@@ -264,29 +306,17 @@
       }
     });
 
-	  
-  const playBtn = document.getElementById("playBtn");
-
-playBtn.addEventListener("click", () => {
-  if (video.paused) {
-    video.play();
-    playBtn.textContent = "⏸️";
-  } else {
-    video.pause();
-    playBtn.textContent = "▶️";
-  }
-});
-
-
-fullscreenBtn.addEventListener("click", () => {
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.webkitRequestFullscreen) { // Safari
-        video.webkitRequestFullscreen();
-      } else if (video.msRequestFullscreen) { // IE/Edge
-        video.msRequestFullscreen();
+    // Fullscreen
+    fullscreenBtn.addEventListener("click", () => {
+      if (videoContainer.requestFullscreen) {
+        videoContainer.requestFullscreen();
+      } else if (videoContainer.webkitRequestFullscreen) { // Safari
+        videoContainer.webkitRequestFullscreen();
+      } else if (videoContainer.msRequestFullscreen) { // IE/Edge
+        videoContainer.msRequestFullscreen();
       }
     });
+		
 
 	  
     // Disable right click on whole page
