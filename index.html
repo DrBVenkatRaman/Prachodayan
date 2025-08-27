@@ -182,9 +182,10 @@
 
     /* Show controls on hover */
     .video-container:hover .controls,
-    .video-container:fullscreen .controls {
-      opacity: 1;
-    }
+.video-container:fullscreen .controls,
+.video-container:-webkit-full-screen .controls {
+  opacity: 1;
+}
 
     .control-btn {
       background: rgba(0,0,0,0.6);
@@ -310,19 +311,32 @@
       }
     });
 
-    // Fullscreen
-    fullscreenBtn.addEventListener("click", () => {
-      if (videoContainer.requestFullscreen) {
-        videoContainer.requestFullscreen();
-      } else if (videoContainer.webkitRequestFullscreen) { // Safari
-        videoContainer.webkitRequestFullscreen();
-      } else if (videoContainer.msRequestFullscreen) { // IE/Edge
-        videoContainer.msRequestFullscreen();
-      }
-    });
-		
-
-	  
+    // Fullscreen toggle
+fullscreenBtn.addEventListener("click", () => {
+  if (
+    document.fullscreenElement || 
+    document.webkitFullscreenElement || 
+    document.msFullscreenElement
+  ) {
+    // Exit fullscreen
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  } else {
+    // Enter fullscreen
+    if (videoContainer.requestFullscreen) {
+      videoContainer.requestFullscreen();
+    } else if (videoContainer.webkitRequestFullscreen) {
+      videoContainer.webkitRequestFullscreen();
+    } else if (videoContainer.msRequestFullscreen) {
+      videoContainer.msRequestFullscreen();
+    }
+  }
+});
     // Disable right click on whole page
     document.addEventListener("contextmenu", e => e.preventDefault());
   </script>
