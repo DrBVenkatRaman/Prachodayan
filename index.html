@@ -336,14 +336,14 @@
 	
 	<div class="players">
   <div class="video-container">
-    <video autoplay muted loop playsinline>
+    <video id="myVideo" autoplay muted loop playsinline controlslist="nodownload">
       <source src="advertisement2.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  </div>
+  
 <button class="mute-btn" id="muteBtn">🔇</button>
   </div>
-
+	</div>
   <script>
     const video = document.getElementById("myVideo");
     const muteBtn = document.getElementById("muteBtn");
