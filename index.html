@@ -180,12 +180,12 @@
       transition: opacity 0.3s ease;
     }
 
-    /* Show controls on hover */
+    /* Show controls when hover or fullscreen */
     .video-container:hover .controls,
-.video-container:fullscreen .controls,
-.video-container:-webkit-full-screen .controls {
-  opacity: 1;
-}
+    .video-container:fullscreen .controls,
+    .video-container:-webkit-full-screen .controls {
+      opacity: 1;
+    }
 
     .control-btn {
       background: rgba(0,0,0,0.6);
@@ -288,7 +288,7 @@
     const muteBtn = document.getElementById("muteBtn");
     const fullscreenBtn = document.getElementById("fullscreenBtn");
     const videoContainer = document.getElementById("videoContainer");
-
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     // Play / Pause
     playBtn.addEventListener("click", () => {
       if (video.paused) {
@@ -311,33 +311,31 @@
       }
     });
 
+    // Fullscreen toggle
     fullscreenBtn.addEventListener("click", () => {
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.webkitRequestFullscreen) { // Safari
-        video.webkitRequestFullscreen();
-      } else if (video.msRequestFullscreen) { // IE/Edge
-        video.msRequestFullscreen();
+      if (isIOS) {
+        // iOS Safari: only video can go fullscreen
+        video.webkitEnterFullscreen && video.webkitEnterFullscreen();
+        return;
+      }
+
+      if (
+        document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.msFullscreenElement
+      ) {
+        // Exit fullscreen
+        if (document.exitFullscreen) document.exitFullscreen();
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        else if (document.msExitFullscreen) document.msExitFullscreen();
+      } else {
+        // Enter fullscreen on container (includes controls)
+        if (videoContainer.requestFullscreen) videoContainer.requestFullscreen();
+        else if (videoContainer.webkitRequestFullscreen) videoContainer.webkitRequestFullscreen();
+        else if (videoContainer.msRequestFullscreen) videoContainer.msRequestFullscreen();
       }
     });
 
-    // Change fullscreen button icon when state changes
-    function updateFullscreenIcon() {
-      if (
-        document.fullscreenElement === videoContainer ||
-        document.webkitFullscreenElement === videoContainer ||
-        document.msFullscreenElement === videoContainer
-      ) {
-        fullscreenBtn.textContent = "❌"; // Exit icon
-      } else {
-        fullscreenBtn.textContent = "⛶"; // Enter icon
-      }
-    }
-
-    document.addEventListener("fullscreenchange", updateFullscreenIcon);
-    document.addEventListener("webkitfullscreenchange", updateFullscreenIcon);
-    document.addEventListener("msfullscreenchange", updateFullscreenIcon);
-			
 
     // Disable right click on whole page
     document.addEventListener("contextmenu", e => e.preventDefault());
