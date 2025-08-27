@@ -127,6 +127,34 @@
     #topBtn:hover {
       background-color: #3b5998;
     }
+
+ .players {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #111;
+    }
+
+    .video-container {
+      position: relative;
+      width: 90%;
+      max-width: 900px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none; /* disables right click, download, etc */
+    }
+  
+
 	  
   </style>
 </head>
@@ -290,7 +318,26 @@
   </div>
 </section>
 
-  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div><br><br>
+	
+	
+	<div class="players">
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="advertisement.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    // Disable right click on whole page
+    document.addEventListener("contextmenu", e => e.preventDefault());
+  </script>
+</div>
+	
+	
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <div id="contact">
 <section id="about" style="padding: 3rem 1rem; background-color: #f9fafb;">
   
