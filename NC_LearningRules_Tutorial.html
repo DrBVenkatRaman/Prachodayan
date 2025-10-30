@@ -1,0 +1,108 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> Prachodayan</title>
+<script language="javascript" src="nc_model.js"></script>
+</head>
+<body>
+<table width="95%" align="center">
+<tr>
+<td>
+<font style="font-size:48px" color="green"> Prachodayan<br></font><font style="fontsize:
+26zzzzzpx" color="red"><i>Enlightening Minds</i></font>
+</td>
+</tr>
+</table>
+<br>
+<table width="100%" border="1">
+<tr></tr>
+</table>
+<br><br>
+<table align="right" width="90%"><tr><td align="right"> <input type='button' value="Close"
+onclick='window.close()'></td></tr></table><br>
+<br><center><font size="16">Neuro Computing Lab</font></center><br><br>
+<br><br>
+<center><font size="5">Learning Rules<br><i><u>Tutorial</u></i></font><br><br></center>
+<br>
+<table align="center" width="80%" cellpadding="10" border="1">
+<tr>
+<td><div align="justify">
+<b>
+<u>Learning Rule (or Learning Law):</u></b> A learning rule or learning law may be defined
+as the mathematical formula based on which the weights of a neural network gets updated in each step
+of backpropagation algorithm from random or fixed initial values to a solution weight vector in order to
+learn the given data.
+<br><br>&emsp;&emsp;&emsp;&emsp;<b>BackPropagation
+Formula:</b><br><center><b>w(t+1) = w(t) + &delta;w</b><br><br><b>'&delta;w'</b> is determined
+by the <b>learning rule</b></center>
+</div>
+</td>
+</tr>
+</table>
+<br><br><br>
+<table align="center" width="80%"><tr><td><u><font style="font-size:20px">List of Learning
+Rules:</font></u></td></tr></table>
+<table align="center" width="80%" cellpadding="50" border="1">
+<tr>
+<td><div align="justify">
+<br><br>
+<b>
+1. Perceptron Learning Rule:</b> In this rule, initial weights are random values. This rule
+updates weights as per the formula given below
+<br><br>
+<center><b> &delta;w = Learning_Rate * Individual_Input * Error </b><br> (Error =
+Desired_Output - Actual_Output)</center>
+</div>
+</td>
+</tr>
+<tr>
+<td><div align="justify">
+<b>2. Delta Learning Rule:</b> This rule can be viewed as perceptron learning rule applied to
+continuous function. In this rule, initial weights are random values. It updates weights as per the formula
+given below
+<br><br>
+<center><b> &delta;w = Learning_Rate * Individual_Input * Error *
+(d/dx)(Output_function)</b><br><font style="font-size:15px"><i>Note: This law is applicable only for
+differentiable output functions</i></font><br><br> (Error = Desired_Output - Actual_Output)</center>
+</div>
+</td>
+</tr>
+<tr>
+<td><div align="justify">
+<b>3. LMS Learning Rule:</b> LMS stands for <b>Least Mean Squares</b>. It is similar to
+perceptron learning rule except that it is applied only to linear activation function and error calculated is
+least mean square error. In this rule, initial weights are random values. It updates weights as per the
+formula given below
+<br><br>
+<center><b> &delta;w = Learning_Rate * Individual_Input * Error </b><br><br> [Error = sqrt(
+&sum; (desired_output<sub>j</sub> - actual_output<sub>j</sub>)<sup>2</sup> )] (j=1,2,...m
+neurons)</center>
+</div>
+</td>
+</tr>
+<tr>
+<td><div align="justify">
+<b>4. Hebbian Learning Rule:</b> It is an unsupervised learning rule. Hence, the desired
+output is not known. Initial weights are taken near '0'. It updates weights as per the formula given below
+<br><br>
+<center><b> &delta;w = Learning_Rate * Individual_Input * Actual_Output </b></center>
+</div>
+</td>
+</tr>
+<tr>
+<td><div align="justify">
+<b>5. Correlation Learning Rule:</b> In this rule, Initial weights are taken near '0'. It updates
+weights as per the formula given below
+<br><br>
+<center><b> &delta;w = Learning_Rate * Actual_Output * Desired_Output </b></center>
+</div>
+</td>
+</tr>
+</table>
+<br><br><br>
+<center>
+<input type='button' value="Close" onclick='window.close()'>
+</center>
+</body>
+</html>
+

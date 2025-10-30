@@ -1,0 +1,97 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Prachodayan</title>
+<script language="javascript" src="nc_learningrules.js"></script>
+</head>
+<body onload="assign_weights()">
+<table width="95%" align="center">
+<tr>
+<td width="80%">
+<font style="font-size:55px" color="green">Prachodayan<br></font><font style="fontsize:
+30px" color="red"><i>Enlightening Minds</i></font>
+</td>
+<td align="right"><a href="index.html"><img src="home.jpeg" width="40%"></a></td>
+<br>
+<table width="100%" border="1">
+<tr></tr>
+</table>
+<br><br>
+<table width="100%" align="center" border="1" cellpadding="20" bordercolor='black'>
+<tr>
+<td align="center">
+<a href="Courses.html"><font color='black' style='font-size:5vw; font-size:
+3vh'><b>Courses</b></font></a>
+</td>
+<td align="center">
+<a href="Research.html"><font color='black' style='font-size:5vw; font-size:
+3vh'><b>Research</b></font></a>
+</td> <td align="center">
+<a href="AboutUs.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>About
+Us</b></font></a>
+</td>
+</tr>
+</table><br><br>
+<table width='30%' border='0'>
+<tr><td align='center' width='20%'>
+<a href="NC_Home.html"><font color="black" style="font-size:14px"><img src="nc.jpeg"
+width="60" height="60"><br>Neuro Computing</font></a>
+</td></tr>
+</table>
+<br><br>
+<center><font size="5"> Learning Rules</font><br><a href="NC_LearningRules_Tutorial.html"
+target="_blank">Tutorial</a><br><br></center>
+<form name="f1"><br>
+<br><br>
+<table width="80%" align='center'><tr><td width="15%"><i><u><b>Experiment:</b></i></u></td>
+<td width='10%'> <select name="activation"><option default value="">Activation
+Type</option>
+<option value="linear">Linear </option>
+<option value="threshold"> Threshold (0)</option>
+<option value="sigmoid"> Sigmoid </option>
+<option value="relu"> Relu </option>
+<option value="tanh"> tanh </option>
+<option value="arctan"> arctan </option>
+</select></td>
+<td width='15%'> <select name="law"><option default value="">--Learning Law--</option>
+<option value="perceptron">Perceptron </option>
+<option value="hebbian">Hebbian</option>
+<option value="correlation"> Correlation </option>
+</select>
+</td>
+<td width='20%'>
+<input type="button" value="Change Random Values" onclick="assign_weights()">
+</td>
+<td align="right"><input type=button value="Submit"
+onClick="calculate()"></tr></table><br>
+<table align="center" width="80%" border="1">
+<tr><th>I1</th><th>I2</th><th>Bias</th><th>W1</th><th>W2</th><th>Wb</th><th>Desired
+Output</th></tr>
+<tr><td width="14%" align="center"><input type="text" name="i1" style="width:70px"></td>
+<td align="center" width="14%"><input type="text" name="i2" style="width:70px"></td>
+<td align="center" width="14%"><input type="text" name="b" style="width:70px"></td>
+<td align="center" width="14%"><input type="text" name="w1" style="width:70px"></td>
+<td align="center" width="14%"><input type="text" name="w2" style="width:70px"></td>
+<td align="center" width="14%"><input type="text" name="wb" style="width:70px"></td>
+<td align="center" width="14%"><input type="text" name="d" style="width:70px"></td>
+</tr></table><br><br>
+<table align='center'
+width='40%'><tr><td><i><u><b>Results:</b></i></u></td></tr></table>
+<table width='40%' align='center' border='1'><tr>
+<tr><td>Learning Rule:</td><td align="center"><input type="text" name="lrule"
+readonly></td>
+<tr><td>Summation Result:</td><td align="center"><input type="text" name="summation"
+readonly></td>
+<tr><td>Actual Output:</td><td align="center"><input type="text" name="activation_result"
+readonly></td>
+<tr><td>Desired Output:</td><td align="center"><input type="text" name="desired_result"
+readonly></td>
+<tr><td>Delta W1:</td><td align="center"><input type="text" name="dw1" readonly></td>
+<tr><td>Delta W2:</td><td align="center"><input type="text" name="dw2" readonly></td>
+<tr><td>Delta Wb:</td><td align="center"><input type="text" name="dwb" readonly></td>
+</tr>
+</table>
+</center>
+</body>
+</html>
+

@@ -1,0 +1,228 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> Prachodayan</title>
+<script language="javascript" src="nc_model.js"></script>
+</head>
+<body>
+<table width="95%" align="center">
+<tr>
+<td>
+<font style="font-size:48px" color="green"> Prachodayan<br></font><font style="fontsize:
+26zzzzzpx" color="red"><i>Enlightening Minds</i></font>
+</td>
+</tr>
+</table>
+<br>
+<table width="100%" border="1">
+<tr></tr>
+</table>
+<br><br>
+<table align="right" width="90%"><tr><td align="right"> <input type='button' value="Close"
+onclick='window.close()'></td></tr></table><br>
+<br><center><font size="16">Neuro Computing Lab</font></center><br><br>
+<br><br>
+<center><font size="5">Model of an Artificial
+Neuron<br><i><u>Tutorial</u></i></font><br><br></center>
+<table align="center" width="80%">
+<tr>
+<td width="60%">
+<div align="justify">&emsp;&emsp;&emsp;&emsp;Based on the proposed architectures and
+functionalities of a biological neuron, a model for artificial neuron is designed to meet the requirements
+of machine learning.
+Figure1.1 depicts the generalied model of an artificial neuron. In the figure,<br><br>
+<b>'I1,I2,..In'</b> represent the 'n' input values<br><br>
+<b>'w1,w2,...wn'</b> represent the weights of respective input values<br><br>
+<b>'Bias'</b> is a special constant input, taken +1 as input value in the figure.<br><br>
+<b>'wb'</b> represents bias weight.</div>
+</td>
+<td align='center'>
+<img src="neuron_model.jpg" width="70%" border='1'><br><b>Figure 1.1</b>: generalized
+model of an artificial neuron
+</td>
+</tr>
+</table>
+<br><br>
+<table align="center" width="80%" cellpadding="10" border="0">
+<tr>
+<td><div align="justify">
+<b>
+<u>Functions:</u><br><br>1. Summation:</b> This function takes all the input values and
+corresponding weights and produces the weighted linear sum of it.
+<br><br>&emsp;&emsp;&emsp;&emsp;<b>Output</b>, z = w1*I1 + w2*I2 + .... + wn*In +
+wb*Bias
+</b>
+</div>
+</td>
+</tr>
+<tr>
+<td><div align="justify">
+<b>
+2. Activation:</b> Activation or transfer function takes the linear weighted sum of the
+inputs(z) and produces the activation value which may vary depending on the type of activation function
+used.
+<br><br>
+</div>
+</td>
+</tr>
+<tr>
+<td width="70%"><div align="justify">
+<b>
+<u>Types of Activation functions:</u></b>
+<br><br>
+<b>
+1. Linear:</b> This function produces linear weighted sum as the output.<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output: </b>linear_activation(z)=z <i>(w1*I1 + w2I2 +..+
+wnIn + wb*Bias)</i>
+<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output Range:</b> -Infinity to +Infinity
+</div>
+</td>
+<td align="center">
+<br><br><br><br><img src="linear_activation.png" width="90%"><br>Linear Activation
+Function
+</td>
+</tr>
+<tr>
+<td width="70%"><div align="justify">
+<br><br><br>
+<b>2. Threshold:</b> This function produces output based on the threshold value(t).<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output: </b>threshold_activation(z)=1 if z >= 0,
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ems
+p;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;=0 if z<0
+<br>&emsp;&emsp;&emsp;&emsp;<i> (considering '0' as the threshold value,t)</i>
+<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output Range:</b> 0 or 1
+</div>
+</td>
+<td align="center">
+</td>
+</tr>
+<tr>
+<td width="70%"><div align="justify">
+<br><br><br>
+<b>3. Sigmoid:</b> This function produces the sigmoid value as output<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output: </b>sigmoid_activation(z) = 1 / (1 + e<sup>-
+z</sup>) <br>&emsp;&emsp;&emsp;&emsp;<i> </i>
+<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output Range:</b> 0 to 1 (continuous values)
+</div>
+</td>
+<td align="center">
+<br><img src="sigmoid_activation.png" width="90%"><br>Sigmoid Activation Function
+</td>
+</tr>
+<tr>
+<td width="70%"><div align="justify">
+<br><br><br>
+<b>4. Tanh:</b> This function produces the hyperbolic tangent value of linear weighted sum
+as output<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output: </b>tanh_activation(z) = tanh(z)
+<br>&emsp;&emsp;&emsp;&emsp;<i> </i>
+<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output Range:</b> -1 to 1 (continuous values)
+</div>
+</td>
+<td align="center">
+<br><img src="tanh_activation.png" width="90%"><br>Tanh Activation Function
+</td>
+</tr>
+<tr>
+<td width="70%"><div align="justify">
+<br><br><br>
+<b>5. Piecewise Linear Function:</b> This function produces continuous output as per the
+different output equations (formulae) defined on z value. An example piecewise linear function is given
+below.<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output:
+</b><br>&emsp;&emsp;&emsp;&emsp;piecewise_linear_activation(z) = -0.5, if z <= -
+0.5<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&e
+msp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = z, if -0.5 < z <
+0.5<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&e
+msp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; =+0.5, if z>=0.5
+<br>&emsp;&emsp;&emsp;&emsp;<i>(taking -0.5 to +0.5 as the interval) </i>
+<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output Range:</b> depends on the interval of the
+functions (equations or formulae) defined on z. In the above example, range is -0.5 to +0.5 continuous
+values.
+</div>
+</td>
+<td align="center">
+<br><img src="Piecewise_linear_activation.png" width="90%"><br>Piecewise Linear Activation
+Function
+</td>
+</tr>
+<tr>
+<td width="70%"><div align="justify">
+<br><br><br>
+<b>6. Relu Function:</b> Stands for Rectified Linear Unit. This function produces 0 to +Infinity
+continuous values as output based on z value<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output: </b>relu_activation(z) = 0, if z <
+0<br>&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ems
+p;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; =z, if z>=0 if <br>&emsp;&emsp;&emsp;&emsp;<i>
+</i>
+<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output Range:</b> 0 to +Infinity
+</div>
+</td>
+<td align="center"><br><img src="relu_activation.png" width="90%"><br>ReLU Activation
+Function
+</td>
+</tr>
+<tr>
+<td width="70%"><div align="justify">
+<br><br><br>
+<b>7. Softmax Function:</b> This function takes a set of real numbers as input and produces
+a set of real numbers as output. The number of output values represent the number of classes trained.
+Each value in the output represents the probabilty of the input values being classified as the
+corresponding output class. Example, if trained classes are dogs, cats, hens, none of these. Suppose the
+output values are [0.842,0.041,0.002,0.113]. This means the chances of the input vector being classified
+as dogs, cats, hens and none of these are 84%,4%,1%,11% respectively.<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output: </b>relu_activation(z) =
+e<sub>j</sub><sup>z</sup>/(&Sum;(e<sub>k</sub><sup>z</sup>))[j=1,2,..k]
+<br>&emsp;&emsp;&emsp;&emsp;<i>k represents total number of classes</i>
+<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output Range:</b> All output values sum to produce 1-
+[Probability].<br>&emsp;&emsp;&emsp;&emsp;(100% chances distributed to various classes)
+</div>
+</td>
+<td align="center">
+</td>
+</tr>
+<tr>
+<td width="70%"><div align="justify">
+<br><br><br>
+<b>8. Signum Function:</b> This function produces -1 or 0 or +1 values based on z
+value<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output: </b>signum_activation(z) = -1 if z<0,
+<br>&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp
+;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;=0 if
+z=0<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&e
+msp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; =+1 if z>0 <br>&emsp;&emsp;&emsp;&emsp;<i>
+</i>
+<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output Range:</b> -1 or 0 or +1 (discrete values)
+</div>
+</td>
+<td align="center">
+</td>
+</tr>
+<tr>
+<td width="70%"><div align="justify">
+<br><br><br>
+<b>9. Arctan Function:</b> This function produces inverse hyperbolic tangent value of z as
+output.<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output: </b>arctan_activation(z) = tanh<sup>-1</sup>(z)
+<br>&emsp;&emsp;&emsp;&emsp;<i> </i>
+<br><br>
+&emsp;&emsp;&emsp;&emsp;<b>Output Range:</b> -&pi;/2 to +&pi;/2
+</div>
+</td>
+<td align="center">
+</td>
+</tr>
+</table>
+<center>
+<input type='button' value="Close" onclick='window.close()'>
+</center>
+</body>
+</html>
