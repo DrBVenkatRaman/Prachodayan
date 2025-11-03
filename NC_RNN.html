@@ -1,0 +1,103 @@
+
+<html>
+    <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title>Prachodayan</title>
+    <script language="javascript" src="nc_rnn.js"></script>
+    </head>
+    <body onload="assign_weights()">
+           <table width="95%" align="center">
+            <tr>
+                <td width="80%">
+                    <font style="font-size:55px" color="green">Prachodayan<br></font><font style="font-size:30px" color="red"><i>Enlightening Minds</i></font>
+                </td>
+                <td align="right"><a href="index.html"><img src="home.jpeg" width="40%"></a></td>
+         
+        <br>
+        <table width="100%" border="1">
+            <tr></tr>
+        </table>
+        <br><br>
+        <table width="100%" align="center" border="1" cellpadding="20" bordercolor='black'>
+           
+            <tr>  
+                <td align="center">
+                    <a href="Courses.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Courses</b></font></a>
+                </td> 
+                <td align="center">
+                    <a href="Research.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Research</b></font></a>
+                </td>  <td align="center">
+                    <a href="AboutUs.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>About Us</b></font></a>
+                </td>
+               
+            </tr>
+        </table><br><br>
+        <table width='30%' border='0'>
+            <tr><td align='center' width='20%'>
+                <a href="NC_Home.html"><font color="black" style="font-size:14px"><img src="nc.jpeg" width="60" height="60"><br>Neuro Computing</font></a>
+                </td></tr>
+        </table>
+        <br><br>
+    <center><font size="5">Recurrent Neural Networks</font><br><a href="NC_RNN_Tutorial.html" target="_blank">Tutorial</a><br><br></center>
+    <form name="f1"><br>
+        <center><img width="40%" heigth="10%" src="rnn.jpeg" border="1"><br><b>Figure: </b><u>Recurrent Neural Network</u><br><br><br>
+        <table width="80%"><tr><td width="15%"><i><u><b>Experiment:</b></i></u></td>
+                <td width="20%"> <input type="button" value="Change Random Weights" onclick="assign_weights()"></td><td> <input type="button" value="Next Iteration" onclick="iterate()"></td><td align="right"><input type=button value="Submit" onClick="calculate()"></tr></table><br>
+        <table align="center" width="80%" border="1">
+            <tr><th>I1</th><th>I2</th><th>I3</th><th>I4</th><th>I5</th></tr>
+            <tr><td width="12%" align="center"><input type="text" name="i1" style="width:70px" readonly></td>
+                <td align="center" width="12%"><input type="text" name="i2" style="width:70px" readonly></td>
+                <td align="center" width="12%"><input type="text" name="i3" style="width:70px" readonly></td>
+                <td align="center" width="12%"><input type="text" name="i4" style="width:70px"></td>
+                <td align="center" width="12%"><input type="text" name="i5" style="width:70px"></td>
+               
+            </tr>
+            
+            
+        
+        </table>
+        </center><br><br><br>
+        <table width="90%" align="center" border="0"><tr>
+                
+                <td width="35%" align="center"><b>Input - Hidden Layer Weight Matrix</b><br>
+                    <table width="80%" border="1" align="center">
+                        <tr><td></td><th>H1</th><th>H2</th><th>H3</th><th>H4</th>
+            <tr>
+                <th>I1</th><td align="center"> <input type="text" name="wih00" style="width:70px"></td><td align="center"><input type="text" name="wih01" style="width:70px"> </td><td align="center"> <input type="text" name="wih02" style="width:70px"></td><td align="center"> <input type="text" name="wih03" style="width:70px"></td></tr>
+            <tr><th>I2</th><td align="center"> <input type="text" name="wih10" style="width:70px"></td><td align="center"><input type="text" name="wih11" style="width:70px"> </td><td align="center"> <input type="text" name="wih12" style="width:70px"></td><td align="center"><input type="text" name="wih13" style="width:70px"> </td></tr>
+                  <tr> <th>I3</th> <td align="center"><input type="text" name="wih20" style="width:70px"> </td><td align="center"> <input type="text" name="wih21" style="width:70px"></td><td align="center"> <input type="text" name="wih22" style="width:70px"></td><td align="center"><input type="text" name="wih23" style="width:70px"> </td></tr>
+<tr><th>I4</th><td align="center"> <input type="text" name="wih30" style="width:70px"></td><td align="center"><input type="text" name="wih31" style="width:70px"> </td><td align="center"> <input type="text" name="wih32" style="width:70px"></td><td align="center"><input type="text" name="wih33" style="width:70px"></td></tr>
+<tr><th>I5</th><td align="center"><input type="text" name="wih40" style="width:70px"> </td><td align="center"><input type="text" name="wih41" style="width:70px"> </td><td align="center"><input type="text" name="wih42" style="width:70px"> </td><td align="center"><input type="text" name="wih43" style="width:70px"> </td></tr>
+            </tr>
+        </table> 
+                    
+                </td>
+                
+                <td width="40%" align="center"><b>Hidden - Output Layer Weight Matrix</b><br>
+                    <table width="80%" border="1" align="center">
+                        <tr><td></td><th>O1</th><th>O2</th><th>O3</th>
+            <tr>
+                <th>H1</th><td align="center"> <input type="text" name="who00" style="width:70px"></td><td align="center"><input type="text" name="who01" style="width:70px"> </td><td align="center"> <input type="text" name="who02" style="width:70px"></td></tr>
+            <tr><th>H2</th><td align="center"> <input type="text" name="who10" style="width:70px"></td><td align="center"><input type="text" name="who11" style="width:70px"> </td><td align="center"> <input type="text" name="who12" style="width:70px"></td></tr>
+                  <tr> <th>H3</th> <td align="center"><input type="text" name="who20" style="width:70px"> </td><td align="center"> <input type="text" name="who21" style="width:70px"></td><td align="center"> <input type="text" name="who22" style="width:70px"></td></tr>
+<tr><th>H4</th><td align="center"> <input type="text" name="who30" style="width:70px"></td><td align="center"><input type="text" name="who31" style="width:70px"> </td><td align="center"> <input type="text" name="who32" style="width:70px"></td></tr>
+
+        </table> 
+                    
+                </td>
+                
+                
+                <td align="center"><b>Outputs</b><br><br>
+                    <table align="center" border="0" width="60%">
+                        <tr><th align="right">O1: </th>
+                            <td width="12%" align="center"><input type="text" name="o1" style="width:70px" readonly></td></tr>
+                    </tr><tr><th align="right">O2: </th><td align="center" width="12%"><input type="text" name="o2" style="width:70px" readonly></td></tr>
+                    <tr><th align="right">O3: </th><td align="center" width="12%"><input type="text" name="o3" style="width:70px" readonly></td></tr>
+               
+            </tr>
+                    </table>
+                    
+                </td></tr></table>
+       
+    </body>
+</html>
