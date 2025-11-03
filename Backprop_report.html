@@ -1,0 +1,21 @@
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <table align="center" width="80%" border="1">
+            <tr><th>I1</th><th>I2</th><th>Bias</th>
+            <th>W1</th><th>W2</th><th>Wb</th>
+            <th>Summation</th><th>Output</th><th>Error</th><th></th></tr>
+       
+        <%
+String msg=request.getParameter("msg");
+out.println(msg);
+%>
+ </table>
+    <br><center>
+        <input type="button" value="Close" onClick="window.close()"></center>
+    </body>
+</html>

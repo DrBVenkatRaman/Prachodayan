@@ -1,0 +1,62 @@
+<%-- 
+    Document   : computation
+    Created on : May 20, 2019, 10:17:10 AM
+    Author     : Lenovo
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Computations</title>
+        <style>
+            a.hh:hover
+            {
+               color:white;
+            }
+             @media only screen and (min-width: 401px) {
+                      
+                         #div1{
+                                         background-color:#D1F2EB;
+                                         width:100vmax;
+                                         height:20vmin;
+                                         position: absolute;
+                                         top:0%;
+                                         left:0%
+                                     }
+                                     #logo{
+                                         position:absolute;
+                                         top:10%;
+                                         width:9%;
+                                         height:90%
+                                     }
+                                     #logo_name{
+                                       font-size:5vmin;
+                                       position:absolute;
+                                       left:9%;
+                                         
+                                     }
+             }
+        </style>
+    </head>
+    <body>
+        <div id="div1" >
+        <img id="logo" src="atom_symbol.png">
+        <label id="logo_name" ><br>Quantum <br>&emsp;Computing</label>
+        </div>
+        <h2 style='position: absolute;left:40%;top:20%;color: black;font-size:3vw'>Experiments</h2>
+       <div class="buttons">
+            <button class='button1' onclick="location.href='NotGate.html'" type="button" style="position:absolute;left:8%;top:41%;width:15%;height:8%;box-shadow: 0.4vw 0.5vh grey;background-color: #D1F2EB;font-size: 2vw;cursor:pointer;">NotGate</button>
+        <button type="button" onclick="location.href='PhaseFlip.html'" style="position:absolute;left:30%;top:41%;width:15%;height:8%;box-shadow: 0.4vw 0.5vh grey;background-color: #D1F2EB;font-size: 2vw;cursor:pointer;">Pauli-Z</button>
+        <button type="button" onclick="location.href='YGate.html'" style="position:absolute;left:50%;top:41%;width:15%;height:8%;box-shadow: 0.4vw 0.5vh grey;background-color: #D1F2EB;font-size: 2vw;cursor:pointer;">Pauli-Y</button>
+        <button type="button" onclick="location.href='pollyx.html'" style="position:absolute;left:70%;top:41%;width:15%;height:8%;box-shadow: 0.4vw 0.5vh grey;background-color: #D1F2EB;font-size: 2vw;cursor:pointer;">Pauli-X</button>
+      
+        <button type="button" onclick="location.href='HadmardGate.html'" style="position:absolute;left:8%;top:60%;width:15%;height:8%;box-shadow: 0.4vw 0.5vh grey;background-color: #D1F2EB;font-size: 2vw;cursor:pointer;">HadmardGate</button>
+        
+        
+       </div>
+       <a style='text-decoration: none;font-size:1.3vmax;position: absolute;left:5%;top:25%' href="index.html">Home</a>
+       <a style='text-decoration: none;font-size:1.3vmax;position: absolute;left:15%;top:25%' href="qc_home.html">Back</a>
+    </body>
+</html>

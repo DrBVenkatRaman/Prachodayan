@@ -1,0 +1,121 @@
+<html>
+    <head><title>Prachodayan</title>
+  <script src="processing.js"></script>
+</head>
+<body>
+<table width="95%" align="center">
+            <tr>
+                <td width="80%">
+                    <font style="font-size:55px" color="green">Prachodayan<br></font><font style="font-size:30px" color="red"><i>Enlightening Minds</i></font>
+                </td>
+                <td align="right"><a href="index.html"><img src="home.jpeg" width="40%"></a></td>
+         
+        <br>
+        <table width="100%" border="1">
+            <tr></tr>
+        </table>
+        <br><br>
+        <table width="100%" align="center" border="1" cellpadding="20" bordercolor='black'>
+           
+            <tr>  
+                <td align="center">
+                    <a href="Courses.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Courses</b></font></a>
+                </td> 
+                <td align="center">
+                    <a href="Research.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Research</b></font></a>
+                </td>  <td align="center">
+                    <a href="AboutUs.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>About Us</b></font></a>
+                </td>
+               
+            </tr>
+        </table>
+        <br><br>
+        
+        <table width='30%' border='0'>
+            <tr><td align='center' width='20%'>
+                <a href="AL_Home.html"><font color="black" style="font-size:14px"><img src="AL.JPG" width="60" height="60"><br>Artificial Life</font></a>
+                </td></tr>
+        </table>
+        <br><br><center><font style='font-size: 2vw'>Physics Concepts</font><br><br>
+            <table border='1' align='center' width='50%'>
+                <tr><td width='33%'></td><th>X</th><th>Y</th></tr>
+                <tr><td width='33%'><b>Velocity:</b></td><td align='center'><input type='text' id='vxval' value='0'></td><td align='center'><input type='text' id='vyval' value='0'></tr>
+                <tr><td width='33%'><b>Acceleration:</b></td><td align='center'><input type='text' id='axval' value='0.001'></td><td align='center'><input type='text' id='ayval' value='0.01'></tr>
+            </table><br>
+         <input type='button' onClick='f1()' value='start'>
+    <input type='button' onClick='f2()' value='stop'>   
+    </center>
+
+
+        <center><p><canvas id="canvas1" width="800" height="800"></canvas></p></center>
+
+<script id="script1" type="text/javascript" data-processing-sources="Particle.pde">
+var p;
+
+// Simple way to attach js code to the canvas is by using a function
+function sketchProc(processing) {
+   processing.height=360;
+   processing.width=640;
+    var lx=0,vx=parseFloat(document.getElementById('vxval').value),ax=parseFloat(document.getElementById('axval').value);
+ var ly=processing.height/2,vy=parseFloat(document.getElementById('vyval').value),ay=parseFloat(document.getElementById('ayval').value);
+ 
+  // Override draw function, by default it will be called 60 times per second
+  processing.draw = function() {
+      
+   vx=vx+ax;
+   vy=vy+ay;
+   lx=lx+vx;
+   ly=ly+vy;
+   
+   if((lx>processing.width) || (lx<0))
+   vx=vx*-1;
+   if((ly>processing.height) || (ly<0))
+   vy=vy*-1;
+   if(lx>processing.width)
+       lx=processing.width;
+   if(lx<0)
+       lx=0;
+   if(ly>processing.height)
+       ly=processing.height;
+   if(ly<0)
+       ly=0;
+  
+     
+    processing.background(128);
+    processing.strokeWeight(0);
+    
+    processing.ellipse(lx,ly,24,24);
+  
+    
+    }
+
+    // erase background
+    
+    
+  
+  
+  };
+ 
+
+function f1()
+{
+    if(p!=null)
+    p.exit();
+var canvas = document.getElementById("canvas1");
+// attaching the sketchProc function to the canvas
+canvas.hidden=false;
+p = new Processing(canvas, sketchProc);
+// p.exit(); to detach it
+}
+function f2()
+{
+    
+    p.exit();
+    p.reset();
+    var canvas = document.getElementById("canvas1");
+    //canvas.hidden=true;
+}
+</script>
+
+</body>
+</html>
