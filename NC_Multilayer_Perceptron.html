@@ -1,0 +1,99 @@
+
+<html>
+    <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title>Prachodayan</title>
+    <script language="javascript" src="nc_multilayerperceptron.js"></script>
+    </head>
+    <body onLoad="assign_weights()">
+           <table width="95%" align="center">
+            <tr>
+                <td width="80%">
+                    <font style="font-size:55px" color="green">Prachodayan<br></font><font style="font-size:30px" color="red"><i>Enlightening Minds</i></font>
+                </td>
+                <td align="right"><a href="index.html"><img src="home.jpeg" width="40%"></a></td>
+         
+        <br>
+        <table width="100%" border="1">
+            <tr></tr>
+        </table>
+        <br><br>
+        <table width="100%" align="center" border="1" cellpadding="20" bordercolor='black'>
+           
+            <tr>  
+                <td align="center">
+                    <a href="Courses.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Courses</b></font></a>
+                </td> 
+                <td align="center">
+                    <a href="Research.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>Research</b></font></a>
+                </td>  <td align="center">
+                    <a href="AboutUs.html"><font color='black' style='font-size:5vw; font-size: 3vh'><b>About Us</b></font></a>
+                </td>
+               
+            </tr>
+        </table><br><br>
+        <table width='30%' border='0'>
+            <tr><td align='center' width='20%'>
+                <a href="NC_Home.html"><font color="black" style="font-size:14px"><img src="nc.jpeg" width="60" height="60"><br>Neuro Computing</font></a>
+                </td></tr>
+        </table>
+        <br><br>
+    <center><font size="5">Multilayer Perceptron</font><br><a href="NC_Multilayer_Perceptron_Tutorial.html" target="_blank">Tutorial</a><br><br></center>
+    <form name="f1">
+        <center><img src="mlp.jpeg" width="500" height="300" border="1"><br><b>Multi Layer Perceptron</b></center><br><br>
+        <table width="80%" align='center'><tr><td width="15%"><i><u><b>Experiment:</b></i></u></td>
+                    <td width='20%'>
+                        <input type="button" value="Change Random Values" onclick="location.reload();">
+                    </td>
+                    <td width='20%'>
+                        <input type="button" value="Next Iteration" onclick="iterate()">
+                    </td>
+                    <td align="right"><input type=button value="Submit" onClick="calculate()"></tr></table><br>
+            
+                    <table align="center" width="80%" border="1">
+                        <tr><th>I1</th><th>I2</th><th>W1</th><th>W2</th><th>W3</th><th>W4</th><th>Wb1</th><th>W5</th><th>W6</th><th>W7</th><th>W8</th><th>Wb2</th><th>Desired Output1</th><th>Desired Output2</th></tr>
+            <tr><td width="7%" align="center"><input type="text" name="i1" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="i2" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="w1" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="w2" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="w3" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="w4" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="wb1" style="width:50px"></td> 
+                <td align="center" width="7%"><input type="text" name="w5" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="w6" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="w7" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="w8" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="wb2" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="do1" style="width:50px"></td>
+                <td align="center" width="7%"><input type="text" name="do2" style="width:50px"></td>
+            </tr></table><br><br>
+                    
+                    <table align='center' width='80%'><tr><td><i><u><b>Results:</b></i></u></td></tr></table>
+            <table width='70%' align='center' border='1'><tr>
+                <tr><td>Learning Rule:</td><td  align="center"><input type="text" name="lrule" value="w(t+1) = w(t) - (learning_rate) * (d/dw) [total_error] (learning rate is assumed to be 1)" readonly></td><td colspan="3" rowspan="7" align="center"><img src="mlp_backprop.jpeg" width="450"><br><b>Weight Updation</b></td></tr>
+                
+                    <tr><td>H1 Output:</td><td align="center"><input type="text" name="h1" readonly></td>
+                <tr><td>H2 Output:</td><td align="center"><input type="text" name="h2" readonly></td>
+                <tr><td>Actual Output1:</td><td align="center"><input type="text" name="output1" readonly></td>
+                <tr><td>Actual Output2:</td><td align="center"><input type="text" name="output2" readonly></td>
+                <tr><td>Error(Output1):</td><td align="center"><input type="text" name="error1" readonly></td>
+                <tr><td>Error(Output2):</td><td align="center"><input type="text" name="error2" readonly></td>
+                <tr><td>Total Error:</td><td align="center"><input type="text" name="total_error" readonly></td>
+                <tr><td>Delta W1:</td><td align="center"><input type="text" name="dw1" readonly></td><td width="10%"></td><td>W1 (updated):</td><td align="center"><input type="text" name="w1next" readonly></td></tr>
+                <tr><td>Delta W2:</td><td align="center"><input type="text" name="dw2" readonly></td><td width="10%"></td><td>W2 (updated):</td><td align="center"><input type="text" name="w2next" readonly></td></tr>
+                <tr><td>Delta W3:</td><td align="center"><input type="text" name="dw3" readonly></td><td width="10%"></td><td>W3 (updated):</td><td align="center"><input type="text" name="w3next" readonly></td></tr>
+                <tr><td>Delta W4:</td><td align="center"><input type="text" name="dw4" readonly></td><td width="10%"></td><td>W4 (updated):</td><td align="center"><input type="text" name="w4next" readonly></td></tr>
+                <tr><td>Delta Wb1:</td><td align="center"><input type="text" name="dwb1" readonly></td><td width="10%"></td><td>Wb1 (updated):</td><td align="center"><input type="text" name="wb1next" readonly></td></tr>
+                </tr>
+                <tr><td>Delta W5:</td><td align="center"><input type="text" name="dw5" readonly></td><td width="10%"></td><td>W5 (updated):</td><td align="center"><input type="text" name="w5next" readonly></td></tr>
+                <tr><td>Delta W6:</td><td align="center"><input type="text" name="dw6" readonly></td><td width="10%"></td><td>W6 (updated):</td><td align="center"><input type="text" name="w6next" readonly></td></tr>
+                <tr><td>Delta W7:</td><td align="center"><input type="text" name="dw7" readonly></td><td width="10%"></td><td>W7 (updated):</td><td align="center"><input type="text" name="w7next" readonly></td></tr>
+                <tr><td>Delta W8:</td><td align="center"><input type="text" name="dw8" readonly></td><td width="10%"></td><td>W8 (updated):</td><td align="center"><input type="text" name="w8next" readonly></td></tr>
+                
+                 <tr><td>Delta Wb2:</td><td align="center"><input type="text" name="dwb2" readonly></td><td width="10%"></td><td>Wb2 (updated):</td><td align="center"><input type="text" name="wb2next" readonly></td></tr>
+                </tr>
+        
+        </table>
+    </center>
+    </body>
+</html>

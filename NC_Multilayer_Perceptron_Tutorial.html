@@ -1,0 +1,163 @@
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title> Prachodayan</title>
+        
+    </head>
+    <body>
+        <table width="95%" align="center">
+            <tr>
+                <td>
+                    <font style="font-size:48px" color="green"> Prachodayan<br></font><font style="font-size:26zzzzzpx" color="red"><i>Enlightening Minds</i></font>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table width="100%" border="1">
+            <tr></tr>
+        </table>
+        <br><br>
+         <br><br>
+        <table align="right" width="90%"><tr><td align="right"> <input type='button' value="Close" onclick='window.close()'></td></tr></table><br>
+    <br><center><font size="16">Neuro Computing Lab</font></center><br><br>
+        
+    
+    <center><font size="5">Multilayer Perceptron<br><i><u>Tutorial</u></i></font><br><br></center>
+    <table align="center" width="80%" cellpadding="10" border="0">
+        <tr>
+            <td><div align="justify">
+                    In this tutorial, an attempt to explain the output calculation and error backpropagation in multilayer perceptrons is made. Before going into the details let us be clear that a multilayer perceptron neural network has one input layer of neurons, 1 or more hidden layer of neurons and an output layer of neurons. The input layer just forwards the input values to the first hidden layer of neurons. The hidden layers keep producing the intermediate results and forwards it to the next layer until output layer is reached. The output layer produces the final output. In the figure below, an illustration to multilayer perceptron is given where I1 and I represent two input layer neurons, H1 and H2 represent hidden layer neurons (only one hidden layer is present) and O1 and O2 represent two output layer neurons. I1 and I2 take two inputs while O1 and O2 produce two outputs.
+                    <br><br><center><img src="mlp.jpeg" width="350" height="200"><br><br><b> Figure: Multilayer perceptron</b><br></center><br>
+                    <br><br><b><u>Assumptions:</u></b> The following assumptions are made to ease the tutorial
+                    <br><br><b>1.</b>
+                    Activation function is <b>Sigmoid</b> for all hidden and outputlayer neurons.
+                    <br><br><b>2.</b>
+                    Error calculated is mean squared error. <br>&nbsp;&nbsp;&nbsp;&nbsp;<b> Error = (1/2) * (desired_output - actual_output)<sup>2</sup></b>
+                    <br><br><b>3.</b>
+                    <b>Learning Rule:</b> w(t+1) = w(t) - learning_rate * (d/dw)(Total_Error) [partial derivative of total error with respect to the weight to be updated]
+                    <br><br><b>4.</b>
+                    Single bias is connected to all the neurons in each layer.
+                    <br><br>
+                    <b><u>Outputs Calculation:</u></b>
+                    <br>
+                    Outputs are generated as we have already discussed earlier,
+                    <br><br>S(N) represents linear weighted sum of inputs of a neuron 'N'.<br>
+                    O(N) represents activation value of the neuron 'N'.<br><br>
+                    
+                    S(H1)=(I1*W1) + (I2*W3) + Wb1<br>
+                    O(H1)=1/(1+e<sup>-S(H1)</sup>)<br><br>
+                    
+                     S(H2)=(I1*W2) + (I2*W4) + Wb1<br>
+                     O(H2)=1/(1+e<sup>-S(H2)</sup>)<br><br>
+                    
+                     S(O1)=(O(H1)*W5) + (O(H2)*W7) + Wb2<br>
+                     O(O1)=1/(1+e<sup>-S(O1)</sup>)<br><br>
+                    
+                     S(O2)=(O(H1)*W6) + (O(H2)*W8) + Wb2<br>
+                     O(O2)=1/(1+e<sup>-S(O2)</sup>)<br><br>
+                     
+                     <b><u>Error Calculation:</u></b>
+                     <br><br>
+                    Error value is calculated for each output layer neuron. The sum of the errors of all output layer neurons is called the total error.
+                    <br><br>E(N) represents error produced by a neuron 'N'.<br>
+                    <br>D(N) represents Desired Output or Target output of neuron 'N'.
+                    E(total) represents the total error of the neural network.<br><br>
+                    
+                    E(O1)=(1/2)*[(D(O1)-O(O1))<sup>2</sup><br>
+                    E(O2)=(1/2)*[(D(O2)-O(O2))<sup>2</sup><br>
+                    E(total) = E(O1) + E(O2)<br><br>
+                    
+                    
+                     <b><u>Weights Updation:</u></b>
+                     <br><br>
+                     The product of learning rate and the partial derivative of total error with respect to the indiviadual weight is subtracted from the previous weight.<br><br>E(N) represents error produced by a neuron 'N'. The partial derivative is calculated according to chain rule as follows:<br><br>
+                     <br><b>d/dw E(total) = d/dO(N) E(total) * d/dS(N) O(N) * d/dw S(N)</b><br> where N is the neuron to which the weight is attached.
+                    <br>
+                    <br>
+                    <center><img src='mlp_backprop.jpeg' width='350'><br><b>Weights updation of a neuron</b><br><br></center>
+                        It can be understood as the contribution of a particular weight to the total error is equal to the product of the contribution of the output of the neuron to the total error, contribution of the linear weighted sum of the neuron to its output and the contribution of the weight to produce the linear weighted sum. 
+                        <br><br>
+                        
+                    
+                        
+                        
+                        <b><u>Output Layer Weights Updation:</u></b><br><br>
+                        1) <b><u> w5 Updation:</u></b><br>
+                    <br><b>d/dw5 E(total) = d/dO(O1) E(total) * d/dS(O1) O(O1) * d/dw5 S(O1)</b>
+                    <br><br>a) <b> d/dO(O1) E(total) </b>= d/dO(O1) [(1/2)*(D(O1)-O(O1))<sup>2</sup> +  (1/2)*(D(O2)-O(O2))<sup>2</sup>]
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = d/dO(O1) [(1/2)*(D(O1)-O(O1))<sup>2</sup> + (d/dO(O1)) (1/2)*(D(O2)-O(O2))<sup>2</sup>
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = d/dO(O1) [(1/2)*(D(O1)-O(O1))<sup>2</sup> + 0
+                    <br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>d/dO(O1) E(total)</b> = (D(O1)-O(O1))*(-1)
+           
+                    <br><br>b) <b> d/dS(O1) (O(O1)) </b>= d/dS(O1) (sigmoid(S(O1))
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = sigmoid(S(O1)) * (1-sigmoid(S(O1))
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = O(O1) * (1 - O(O1))
+                    <br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>d/dS(O1) O(O1)</b> = O(O1) * (1 - O(O1))
+                    
+                    <br><br>c) <b> d/dw5 (S(O1)) </b>= d/dw5 [ (O(H1)*w5) + (O(H2) * w7) + wb2 ]
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = d/dw5 (O(H1)*w5) + d/dw5 (O(H2) * w7) + d/dw5 (wb2) 
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = d/dw5 (O(H1)*w5) + 0 + 0
+                    <br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>d/dw5 S(O1)</b> = O(H1)
+                   
+                    <br><br>Therefore,  <b> d/dw5 (E(total)) </b>= ((D(O1)-O(O1))*(-1)) * ((O(O1) * (1 - O(O1))) * O(H1)
+                    <br><br>Similarly,  <b> d/dw6 (E(total)) </b>= ((D(O2)-O(O2))*(-1)) * ((O(O2) * (1 - O(O2))) * O(H1)
+                    <br><br>&emsp;&emsp;&emsp;&emsp;&emsp; <b> d/dw7 (E(total)) </b>= ((D(O1)-O(O1))*(-1)) * ((O(O1) * (1 - O(O1))) * O(H2)
+                    <br><br>&emsp;&emsp;&emsp;&emsp; &emsp; <b> d/dw8 (E(total)) </b>= ((D(O2)-O(O2))*(-1)) * ((O(O2) * (1 - O(O2))) * O(H2)
+                    <br><br><br>Since bias weight, <b>wb2</b> affects both E(O1) and E(O2),<br><br><b> d/dwb2 (E(total)) </b>= ( d/dO(O1) [E(total)] + d/dO(O2) [E(total)] ) * ( d/dS(O1) O(O1) + d/dS(O2) O(O2) ) * ( d/dwb2 S(O1) + d/dwb2 S(O2) )                   
+                    <br><br><b>a)  d/dwb2 (S(O1)) </b>= d/dwb2 [ (O(H1)*w5) + (O(H2) * w7) + wb2 ]    
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = d/dwb2 (O(H1)*w5) + d/dw5 (O(H2) * w7) + d/dw5 (wb2) 
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = 0 + 0 + d/dwb2 [wb2]
+                    <br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>d/dw5 S(O1)</b> = 1
+                    <br><br>Similarly, <b>d/dw5 S(O2)</b> = 1
+                    <br><br>Therefore,<br> <b> d/dwb2 (E(total)) </b>=  [ ((D(O1)-O(O1))*(-1)) + ((D(O2)-O(O2))*(-1)) ]  * [ ((O(O1) * (1 - O(O1))) + ((O(O2) * (1 - O(O2))) ] * [ 1 + 1 ]              
+                
+                    
+                    <br><br>
+                        
+                    
+                        
+                        
+                        <b><u>Hidden Layer Weights Updation:</u></b><br><br>
+                        1) <b><u> w1 Updation:</u></b><br>
+                    <br><b>d/dw1 E(total) = d/dO(H1) E(total) * d/dS(H1) O(H1) * d/dw1 S(H1)</b>
+                    <br><br>a) <b> d/dO(H1) E(total) </b>= d/dO(H1) [E(O1)] + d/dO(H1) [E(O2)]
+                    <br><br>i) <b>d/dO(H1) [E(O1)]</b> = [ d/dO(O1) E(O1) ] * [d/dS(O1) [ O(O1) ] * [d/dO(H1) S(O1)] 
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = - [D(O1) - O(O1)] * [O(O1) * (1 - O(O1)] * w5
+                    
+                    <br><br>Similarly,<br><b>d/dO(H1) E(O2)</b> = - [D(O2) - O(O2)] * [O(O2) * (1 - O(O2)] * w6
+                    <br><br>Therefore,<br><b>d/dO(H1) E(total)</b> = { - [D(O1) - O(O1)] * [O(O1) * (1 - O(O1)] * w5 } + {- [D(O2) - O(O2)] * [O(O2) * (1 - O(O2)] * w6}
+           
+                    <br><br>b) <b> d/dS(H1) (O(H1)) </b>= d/dS(H1) (sigmoid(S(H1))
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = sigmoid(S(H1)) * (1-sigmoid(S(H1))
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = O(H1) * (1 - O(H1))
+                    <br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>d/dS(H1) O(H1)</b> = O(H1) * (1 - O(H1)) 
+                    
+                    <br><br>c) <b> d/dw1 (S(H1)) </b>= d/dw1 [ (I1*w1 + I2 * w3 + wb1 ]
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = d/dw1 (I1*w1) + d/dw5 (I2 * w3) + d/dw5 (wb1) 
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = d/dw1 (I1*w1) + 0 + 0
+                    <br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>d/dw1 S(H1)</b> = I1
+                   
+                    <br><br>Therefore,<br>  <b> d/dw1 (E(total)) </b>= { - [D(O1) - O(O1)] * [O(O1) * (1 - O(O1)] * w5 } + { - [D(O2) - O(O2)] * [O(O2) * (1 - O(O2)] * w6} * {O(H1) * (1 - O(H1)) } * {I1}
+                    
+                    
+                    
+                    <br><br>Similarly,<br>  <b> d/dw2 (E(total)) </b>= { - [D(O1) - O(O1)] * [O(O1) * (1 - O(O1)] * w7 } + { - [D(O2) - O(O2)] * [O(O2) * (1 - O(O2)] * w8} * {O(H2) * (1 - O(H2)) } * {I1}
+                    
+                    <br><br> <b> d/dw3 (E(total)) </b>= { - [D(O1) - O(O1)] * [O(O1) * (1 - O(O1)] * w5 } + { - [D(O2) - O(O2)] * [O(O2) * (1 - O(O2)] * w6} * {O(H1) * (1 - O(H1)) } * {I2}
+                    <br><br> <b> d/dw4 (E(total)) </b>= { - [D(O1) - O(O1)] * [O(O1) * (1 - O(O1)] * w7 } + { - [D(O2) - O(O2)] * [O(O2) * (1 - O(O2)] * w8} * {O(H2) * (1 - O(H2)) } * {I2}
+                    
+                        
+                        <br><br><br>Since bias weight, <b>wb1</b> affects both E(O1) and E(O2),<br><br><b> d/dwb1 (E(total)) </b>= ( d/dO(H1) [E(total)] + d/dO(H2) [E(total)] ) * ( d/dS(H1) O(H1) + d/dS(H2) O(H2) ) * ( d/dwb1 S(H1) + d/dwb1 S(H2) )                   
+                    <br><br>From all the above calculated values, we can substitute the above values as, 
+                    <br><br><b> d/dwb1 (E(total)) </b>=  <br><b>(</b><br>[ ( -(D(O1)-O(O1)) * (O(O1)*(1-O(O1))) * w5 )  +  ( - (D(O2)-O(O2)) * (O(O2))*(1-O(O2)) * w6 )) ]<br>+<br>[ ( - (D(O1)-O(O1)) * O(O1)*(1-O(O1)) * w7 ) + ( - (D(O2)-O(O2)) * (O(O2))*(1-O(O2)) * w8) ]<br><b>)</b><br><br> * (O(H1)+O(H2))<br><br> * (1+1);
+    
+                    
+                </div>
+        </td>
+        </tr>
+    </table>
+    <br><br><center><input type='button' value='Close' onclick='window.close()'></center>
+            
+    </body>
+</html>
